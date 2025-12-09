@@ -1,5 +1,5 @@
 import json
-from dataio.exporter import Exporter
+from io_.exporter import Exporter
 
 class Exporter:
     @staticmethod
