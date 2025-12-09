@@ -1,1 +1,5 @@
-temel dosya dizimini bile oluşturamadık daha. orada kaldınız. yarın temel dosya diziminden itibaren devam.
+Sosyal Ağ Analizi
+Uygulaması geliştirilmesini amaçlamaktadır. Öğrenciler, kullanıcılar
+ve bağlantılardan oluşan ağı dinamik olarak yönetebilecek, en kısa
+yolları, toplulukları ve etkili kullanıcıları görselleştirebilecek, grafı
+farklı renklerle renklendirebilecek bir sistem tasarlayacaklardır.
