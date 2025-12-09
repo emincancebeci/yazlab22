@@ -7,7 +7,7 @@ from core.graph import Graph
 class Loader:
     @staticmethod
     def load_graph_from_json(path):
-        with open(path, "r") as f:
+        with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
 
         g = Graph()

@@ -27,17 +27,25 @@ class Algorithms:
         return visited
 
     @staticmethod
-    def dijkstra(graph, start, end):
-        dist = {n: float('inf') for n in graph.nodes}
-        dist[start] = 0
-        pq = PriorityQueue()
-        pq.put((0, start))
+    def dijkstra(graph, start_id, end_id):
+        # başlangıç kontrolü
+        if start_id not in graph.nodes or end_id not in graph.nodes:
+            return [], float("inf")
+
+        dist = {nid: float("inf") for nid in graph.nodes}
         prev = {}
+
+        dist[start_id] = 0
+        pq = PriorityQueue()
+        pq.put((0, start_id))
 
         while not pq.empty():
             curr_dist, u = pq.get()
 
-            if u == end:
+            if curr_dist > dist[u]:
+                continue
+
+            if u == end_id:
                 break
 
             for v in graph.nodes[u].neighbors:
@@ -49,13 +57,13 @@ class Algorithms:
                     prev[v] = u
                     pq.put((new_dist, v))
 
-        # PATH ÇIKAR
-        path = []
-        curr = end
-        while curr in prev:
-            path.append(curr)
-            curr = prev[curr]
-        path.append(start)
+        # yol çıkar
+        if end_id not in prev and start_id != end_id:
+            return [], float("inf")
+
+        path = [end_id]
+        while path[-1] != start_id:
+            path.append(prev[path[-1]])
         path.reverse()
 
-        return path, dist[end]
+        return path, dist[end_id]
