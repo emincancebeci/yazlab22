@@ -26,6 +26,12 @@ class Graph:
         if u not in self.nodes or v not in self.nodes:
             raise ValueError("Node not found.")
 
+        if u == v:
+            raise ValueError("Self-loop edge is not allowed.")
+
+        if (u, v) in self.edges or (v, u) in self.edges:
+            raise ValueError("Edge already exists.")
+
         n1, n2 = self.nodes[u], self.nodes[v]
         w = calculate_weight(n1, n2)
 
