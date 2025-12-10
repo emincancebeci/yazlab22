@@ -29,7 +29,10 @@ class Algorithms:
 
     @staticmethod
     def dijkstra(graph, start, end):
-        dist = {n: float('inf') for n in graph.nodes}
+        if start not in graph.nodes or end not in graph.nodes:
+            return [], float("inf")
+
+        dist = {n: float("inf") for n in graph.nodes}
         dist[start] = 0
         pq = PriorityQueue()
         pq.put((0, start))
@@ -51,15 +54,17 @@ class Algorithms:
                     pq.put((new_dist, v))
 
         # PATH ÇIKAR
-        path = []
+        if dist[end] == float("inf"):
+            return [], float("inf")
+
+        path = [end]
         curr = end
         while curr in prev:
-            path.append(curr)
             curr = prev[curr]
-        path.append(start)
+            path.append(curr)
         path.reverse()
 
-        return path, dist[end_id]
+        return path, dist[end]
 
     # --- A* EN KISA YOL ---
     @staticmethod

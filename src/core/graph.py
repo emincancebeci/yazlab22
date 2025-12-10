@@ -16,6 +16,10 @@ class Graph:
     def remove_node(self, node_id):
         if node_id not in self.nodes:
             return
+        # komşulardan çıkar
+        for n in self.nodes.values():
+            if node_id in n.neighbors:
+                n.neighbors.remove(node_id)
         del self.nodes[node_id]
 
         # ilişkili kenarları sil
@@ -47,3 +51,21 @@ class Graph:
             del self.edges[(u, v)]
         if (v, u) in self.edges:
             del self.edges[(v, u)]
+        # komşuluklardan çıkar
+        if u in self.nodes and v in self.nodes[u].neighbors:
+            self.nodes[u].neighbors.remove(v)
+        if v in self.nodes and u in self.nodes[v].neighbors:
+            self.nodes[v].neighbors.remove(u)
+
+    # --- YARDIMCI ÇIKTILAR ---
+    def adjacency_list(self):
+        return {nid: list(node.neighbors) for nid, node in self.nodes.items()}
+
+    def adjacency_matrix(self):
+        ids = sorted(self.nodes.keys())
+        idx = {nid: i for i, nid in enumerate(ids)}
+        size = len(ids)
+        matrix = [[0] * size for _ in range(size)]
+        for (u, v), edge in self.edges.items():
+            matrix[idx[u]][idx[v]] = edge.weight
+        return ids, matrix
