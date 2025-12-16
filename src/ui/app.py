@@ -1,9 +1,3 @@
-<<<<<<< Updated upstream
-# ui/app.py
-from PyQt5.QtWidgets import QMainWindow, QWidget, QHBoxLayout, QVBoxLayout, QPushButton, QLabel
-from .canvas import Canvas
-from core.algorithms import Algorithms
-=======
 import os
 import time
 from PyQt5.QtWidgets import (
@@ -21,7 +15,7 @@ from core.node import Node
 from io_.exporter import Exporter
 from io_.loader import Loader
 from .canvas import Canvas
->>>>>>> Stashed changes
+
 
 class App(QMainWindow):
     def __init__(self, graph, initial_graph_path=None):
@@ -30,60 +24,60 @@ class App(QMainWindow):
         self.graph = graph
         self.initial_graph_path = initial_graph_path
         self.setWindowTitle("Sosyal Ağ Analizi")
-        self.resize(1000, 600)
+        self.resize(1200, 700)
+
+        self.base_dir = os.path.dirname(os.path.dirname(__file__))
+        self.data_dir = os.path.join(self.base_dir, "data")
+        os.makedirs(self.data_dir, exist_ok=True)
 
         main_widget = QWidget()
         main_layout = QHBoxLayout(main_widget)
 
-<<<<<<< Updated upstream
-        # SOL: Canvas
-        self.canvas = Canvas(self.graph)
-=======
-        # Sol: Canvas
-        self.canvas = Canvas(graph, node_click_callback=self.on_node_clicked)
->>>>>>> Stashed changes
+        self.canvas = Canvas(self.graph, node_click_callback=self.on_node_clicked)
         main_layout.addWidget(self.canvas, stretch=3)
 
-        # SAĞ: Kontrol paneli
-        side_panel = QWidget()
-        side_layout = QVBoxLayout(side_panel)
+        panel = QWidget()
+        panel_layout = QVBoxLayout(panel)
 
-<<<<<<< Updated upstream
-        self.info_label = QLabel("Başlangıç ve bitiş node'unu seçmek için node'lara tıkla.")
-        self.result_label = QLabel("Seçili: -")
-        self.info_label.setStyleSheet("color: white;")
-        self.result_label.setStyleSheet("color: white;")
-=======
-        # --- ALGORİTMA GİRİŞLERİ ---
         self.start_input = QLineEdit()
         self.start_input.setPlaceholderText("Başlangıç node id")
         self.end_input = QLineEdit()
         self.end_input.setPlaceholderText("Bitiş node id")
->>>>>>> Stashed changes
 
+        panel_layout.addWidget(QLabel("Başlangıç / Bitiş"))
+        panel_layout.addWidget(self.start_input)
+        panel_layout.addWidget(self.end_input)
+
+        btn_bfs = QPushButton("BFS")
+        btn_dfs = QPushButton("DFS")
         btn_dijkstra = QPushButton("En Kısa Yol (Dijkstra)")
+        btn_astar = QPushButton("En Kısa Yol (A*)")
+        btn_components = QPushButton("Bağlı Bileşenler")
+        btn_degree = QPushButton("Derece Merkezilik (Top 5)")
+        btn_welsh = QPushButton("Welsh-Powell Renklendirme")
+
+        btn_bfs.clicked.connect(self.run_bfs)
+        btn_dfs.clicked.connect(self.run_dfs)
         btn_dijkstra.clicked.connect(self.run_dijkstra)
+        btn_astar.clicked.connect(self.run_astar)
+        btn_components.clicked.connect(self.run_components)
+        btn_degree.clicked.connect(self.run_degree)
+        btn_welsh.clicked.connect(self.run_welsh)
 
-        side_layout.addWidget(self.info_label)
-        side_layout.addWidget(self.result_label)
-        side_layout.addWidget(btn_dijkstra)
-        side_layout.addStretch()
+        for btn in [btn_bfs, btn_dfs, btn_dijkstra, btn_astar, btn_components, btn_degree, btn_welsh]:
+            panel_layout.addWidget(btn)
 
-<<<<<<< Updated upstream
-        side_panel.setStyleSheet("background-color: #111111; color: white;")
-=======
-        # --- NODE / EDGE İŞLEMLERİ ---
         panel_layout.addWidget(QLabel("Kullanıcı (Node) İşlemleri"))
         self.node_id_input = QLineEdit()
         self.node_id_input.setPlaceholderText("Node id")
         self.node_name_input = QLineEdit()
-        self.node_name_input.setPlaceholderText("İsim (isteğe bağlı)")
+        self.node_name_input.setPlaceholderText("İsim")
         self.node_aktiflik_input = QLineEdit()
-        self.node_aktiflik_input.setPlaceholderText("Aktiflik (sayı)")
+        self.node_aktiflik_input.setPlaceholderText("Aktiflik")
         self.node_etkilesim_input = QLineEdit()
-        self.node_etkilesim_input.setPlaceholderText("Etkileşim (sayı)")
+        self.node_etkilesim_input.setPlaceholderText("Etkileşim")
         self.node_baglanti_input = QLineEdit()
-        self.node_baglanti_input.setPlaceholderText("Bağlantı sayısı (sayı)")
+        self.node_baglanti_input.setPlaceholderText("Bağlantı sayısı")
 
         for w in [
             self.node_id_input,
@@ -118,7 +112,6 @@ class App(QMainWindow):
         for btn in [btn_edge_add, btn_edge_delete]:
             panel_layout.addWidget(btn)
 
-        # Export / Import butonları
         btn_export_json = QPushButton("JSON dışa aktar")
         btn_export_csv = QPushButton("CSV dışa aktar")
         btn_adj_list = QPushButton("Komşuluk listesi CSV")
@@ -146,19 +139,50 @@ class App(QMainWindow):
             btn_reset,
         ]:
             panel_layout.addWidget(btn)
->>>>>>> Stashed changes
 
-        main_layout.addWidget(side_panel, stretch=1)
+        self.result = QTextEdit()
+        self.result.setReadOnly(True)
+        panel_layout.addWidget(QLabel("Sonuç"))
+        panel_layout.addWidget(self.result)
+        panel_layout.addStretch()
+
+        main_layout.addWidget(panel, stretch=1)
 
         self.setCentralWidget(main_widget)
 
-<<<<<<< Updated upstream
-=======
-        self.base_dir = os.path.dirname(os.path.dirname(__file__))
-        self.data_dir = os.path.join(self.base_dir, "data")
-        os.makedirs(self.data_dir, exist_ok=True)
+        self.setStyleSheet(
+            """
+            QMainWindow {
+                background-color: #121212;
+            }
+            QWidget {
+                background-color: #121212;
+                color: #f0f0f0;
+            }
+            QLineEdit, QTextEdit {
+                background-color: #1f1f1f;
+                border: 1px solid #333333;
+                border-radius: 4px;
+                padding: 4px;
+                color: #f0f0f0;
+            }
+            QPushButton {
+                background-color: #2d2d2d;
+                border-radius: 4px;
+                padding: 6px 10px;
+            }
+            QPushButton:hover {
+                background-color: #3a3a3a;
+            }
+            QPushButton:pressed {
+                background-color: #1e1e1e;
+            }
+            QLabel {
+                color: #f0f0f0;
+            }
+            """
+        )
 
-    # --- Yardımcılar ---
     def _parse_int(self, text):
         try:
             return int(text)
@@ -182,7 +206,6 @@ class App(QMainWindow):
         self.canvas.set_colors({})
         self.canvas.update()
 
-    # --- Node tıklama ---
     def on_node_clicked(self, node_id):
         node = self.graph.nodes.get(node_id)
         if not node:
@@ -191,14 +214,12 @@ class App(QMainWindow):
             f"Seçilen Node: {node.id} - {node.name}",
             f"Aktiflik: {node.aktiflik}",
             f"Etkileşim: {node.etkilesim}",
-            f"Bağlantı sayısı (özellik): {node.baglanti_sayisi}",
+            f"Bağlantı sayısı: {node.baglanti_sayisi}",
             f"Komşular: {node.neighbors}",
         ]
-        # sadece seçili node'u vurgula
         self.canvas.set_path([node.id])
         self._set_result("\n".join(info_lines))
 
-    # --- Node / Edge işlemleri ---
     def add_node(self):
         nid = self._parse_int(self.node_id_input.text())
         if nid is None:
@@ -234,7 +255,6 @@ class App(QMainWindow):
         node.aktiflik = aktiflik
         node.etkilesim = etkilesim
         node.baglanti_sayisi = baglanti
-        # node özellikleri değişti; komşu kenar ağırlıklarını güncelle
         if hasattr(self.graph, "recalculate_weights_for_node"):
             self.graph.recalculate_weights_for_node(nid)
         self._refresh_canvas()
@@ -273,7 +293,6 @@ class App(QMainWindow):
         self._refresh_canvas()
         self._set_result(f"Edge silindi: {u} - {v}")
 
-    # --- Algoritmalar ---
     def run_bfs(self):
         start = self._parse_int(self.start_input.text())
         if start is None or start not in self.graph.nodes:
@@ -300,34 +319,21 @@ class App(QMainWindow):
         elapsed = (t1 - t0) * 1000
         self._set_result(f"DFS sırası: {visited}\nSüre: {elapsed:.2f} ms")
 
->>>>>>> Stashed changes
     def run_dijkstra(self):
-        selected = self.canvas.selected_nodes
-        if len(selected) != 2:
-            self.result_label.setText("Lütfen 2 node seç (başlangıç ve bitiş).")
+        start = self._parse_int(self.start_input.text())
+        end = self._parse_int(self.end_input.text())
+        if start is None or end is None:
+            self._set_result("Başlangıç ve bitiş id gir.")
             return
-<<<<<<< Updated upstream
-
-        start, end = selected
-        path, dist = Algorithms.dijkstra(self.graph, start, end)
-
-=======
         t0 = time.perf_counter()
         path, dist = Algorithms.dijkstra(self.graph, start, end)
         t1 = time.perf_counter()
         elapsed = (t1 - t0) * 1000
->>>>>>> Stashed changes
         if not path:
-            self.result_label.setText("Yol bulunamadı.")
             self.canvas.clear_path()
+            self._set_result("Yol bulunamadı.")
             return
-
         self.canvas.set_path(path)
-<<<<<<< Updated upstream
-        self.result_label.setText(
-            f"En kısa yol: {' -> '.join(map(str, path))} | Maliyet: {dist:.4f}"
-        )
-=======
         self._set_result(f"Dijkstra yol: {path} | Maliyet: {dist:.4f}\nSüre: {elapsed:.2f} ms")
 
     def run_astar(self):
@@ -353,7 +359,6 @@ class App(QMainWindow):
         t1 = time.perf_counter()
         elapsed = (t1 - t0) * 1000
         self.canvas.clear_path()
-        # her bileşeni farklı renge boya
         color_map = {}
         for cid, comp in enumerate(comps):
             for nid in comp:
@@ -371,10 +376,9 @@ class App(QMainWindow):
         t1 = time.perf_counter()
         elapsed = (t1 - t0) * 1000
         self.canvas.clear_path()
-        # en etkili (en yüksek derece) node'ları renklendir
         color_map = {}
         for idx, (nid, _deg) in enumerate(centrality):
-            color_map[nid] = idx  # farklı renkler
+            color_map[nid] = idx
         self.canvas.set_colors(color_map)
         lines = ["Node\tDerece"]
         for nid, deg in centrality:
@@ -393,7 +397,6 @@ class App(QMainWindow):
         lines.append(f"Süre: {elapsed:.2f} ms")
         self._set_result("\n".join(lines))
 
-    # --- Export işlemleri ---
     def export_json(self):
         path = os.path.join(self.data_dir, "graph_export.json")
         Exporter.export_graph_json(self.graph, path)
@@ -414,7 +417,6 @@ class App(QMainWindow):
         Exporter.export_adjacency_matrix(self.graph, path)
         self._set_result(f"Komşuluk matrisi kaydedildi: {path}")
 
-    # --- Import / geri yükleme işlemleri ---
     def import_json(self):
         path = os.path.join(self.data_dir, "graph_export.json")
         try:
@@ -449,4 +451,3 @@ class App(QMainWindow):
         self.graph = g
         self._refresh_canvas()
         self._set_result(f"Başlangıç grafına dönüldü: {self.initial_graph_path}")
->>>>>>> Stashed changes
