@@ -41,3 +41,35 @@ class Graph:
             del self.edges[(u, v)]
         if (v, u) in self.edges:
             del self.edges[(v, u)]
+<<<<<<< Updated upstream
+=======
+        # komşuluklardan çıkar
+        if u in self.nodes and v in self.nodes[u].neighbors:
+            self.nodes[u].neighbors.remove(v)
+        if v in self.nodes and u in self.nodes[v].neighbors:
+            self.nodes[v].neighbors.remove(u)
+
+    # --- YARDIMCI ÇIKTILAR ---
+    def adjacency_list(self):
+        return {nid: list(node.neighbors) for nid, node in self.nodes.items()}
+
+    def adjacency_matrix(self):
+        ids = sorted(self.nodes.keys())
+        idx = {nid: i for i, nid in enumerate(ids)}
+        size = len(ids)
+        matrix = [[0] * size for _ in range(size)]
+        for (u, v), edge in self.edges.items():
+            matrix[idx[u]][idx[v]] = edge.weight
+        return ids, matrix
+
+    # --- AĞIRLIK GÜNCELLEME ---
+    def recalculate_weights_for_node(self, node_id):
+        """Belirli bir node'a bağlı tüm kenarların ağırlıklarını yeniden hesapla."""
+        if node_id not in self.nodes:
+            return
+        for (u, v), edge in list(self.edges.items()):
+            if u == node_id or v == node_id:
+                n1 = self.nodes[edge.source]
+                n2 = self.nodes[edge.target]
+                edge.weight = calculate_weight(n1, n2)
+>>>>>>> Stashed changes

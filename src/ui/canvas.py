@@ -1,18 +1,33 @@
 # ui/canvas.py
 from PyQt5.QtWidgets import QWidget
 from PyQt5.QtGui import QPainter, QPen, QColor, QFont, QFontMetrics
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QPoint
 
 class Canvas(QWidget):
-    def __init__(self, graph):
+    def __init__(self, graph, node_click_callback=None):
         super().__init__()
         self.graph = graph
+<<<<<<< Updated upstream
         self.radius = 40
 
         self.positions = {}        # nodeId -> (x,y)
         self.selected_nodes = []   # tıklanan node id'leri (max 2)
         self.path_nodes = set()    # en kısa yol üzerindeki node'lar
         self.path_edges = set()    # en kısa yol üzerindeki kenarlar (u,v)
+=======
+        self.radius = 35
+        self.positions = {}
+        self.path_nodes = set()
+        self.path_edges = set()
+        self.node_colors = {}
+        self.node_click_callback = node_click_callback
+        # basit renk paleti
+        self.palette = [
+            QColor("#00bcd4"), QColor("#8bc34a"), QColor("#ffc107"),
+            QColor("#e91e63"), QColor("#9c27b0"), QColor("#3f51b5"),
+            QColor("#ff5722"), QColor("#009688"), QColor("#607d8b")
+        ]
+>>>>>>> Stashed changes
 
     def set_path(self, path):
         """Dijkstra sonucu gelen path'i kaydet ve yeniden çiz."""
@@ -29,6 +44,37 @@ class Canvas(QWidget):
         self.path_edges.clear()
         self.update()
 
+<<<<<<< Updated upstream
+=======
+    def set_colors(self, color_map):
+        self.node_colors = color_map or {}
+        self.update()
+
+    # --- ETKİLEŞİM ---
+    def mousePressEvent(self, event):
+        pos = event.pos()
+        clicked_id = self._detect_node_at(pos)
+        if clicked_id is not None and callable(self.node_click_callback):
+            self.node_click_callback(clicked_id)
+        super().mousePressEvent(event)
+
+    def _detect_node_at(self, pos: QPoint):
+        # pozisyonlar paintEvent sırasında dolduruluyor; yoksa hiçbir şey yapma
+        if not self.positions:
+            return None
+        x_click = pos.x()
+        y_click = pos.y()
+        r = self.radius
+        r2 = r * r
+        for nid, (x, y) in self.positions.items():
+            dx = x_click - x
+            dy = y_click - y
+            if dx * dx + dy * dy <= r2:
+                return nid
+        return None
+
+    # --- ÇİZİM ---
+>>>>>>> Stashed changes
     def paintEvent(self, event):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.Antialiasing)

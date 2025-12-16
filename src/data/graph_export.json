@@ -1,0 +1,102 @@
+{
+    "nodes": [
+        {
+            "id": 1,
+            "name": "Ali",
+            "aktiflik": 0.8,
+            "etkilesim": 12,
+            "baglantiSayisi": 3,
+            "komsular": [
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Veli",
+            "aktiflik": 0.4,
+            "etkilesim": 5,
+            "baglantiSayisi": 2,
+            "komsular": [
+                1,
+                3
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Ay\u015fe",
+            "aktiflik": 0.9,
+            "etkilesim": 20,
+            "baglantiSayisi": 3,
+            "komsular": [
+                1,
+                2,
+                4
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Fatma",
+            "aktiflik": 0.6,
+            "etkilesim": 9,
+            "baglantiSayisi": 2,
+            "komsular": [
+                1,
+                3
+            ]
+        }
+    ],
+    "edges": [
+        {
+            "from": 1,
+            "to": 2,
+            "weight": 0.12372604727116168
+        },
+        {
+            "from": 2,
+            "to": 1,
+            "weight": 0.12372604727116168
+        },
+        {
+            "from": 1,
+            "to": 3,
+            "weight": 0.11110339589887072
+        },
+        {
+            "from": 3,
+            "to": 1,
+            "weight": 0.11110339589887072
+        },
+        {
+            "from": 1,
+            "to": 4,
+            "weight": 0.2398889273839571
+        },
+        {
+            "from": 4,
+            "to": 1,
+            "weight": 0.2398889273839571
+        },
+        {
+            "from": 2,
+            "to": 3,
+            "weight": 0.06233788659929555
+        },
+        {
+            "from": 3,
+            "to": 2,
+            "weight": 0.06233788659929555
+        },
+        {
+            "from": 3,
+            "to": 4,
+            "weight": 0.08299144747430597
+        },
+        {
+            "from": 4,
+            "to": 3,
+            "weight": 0.08299144747430597
+        }
+    ]
+}

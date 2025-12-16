@@ -1,5 +1,25 @@
 from queue import PriorityQueue
 
+
+class Algorithm:
+    """Genel algoritma arayüzü (raporlama / genişletme için)."""
+
+    def __init__(self, name: str):
+        self.name = name
+        self.duration_ms = 0.0
+        self.result = None
+
+    def run(self, graph, **kwargs):
+        raise NotImplementedError("run metodu alt sınıflarda uygulanmalıdır.")
+
+
+class Coloring:
+    """Düğümler için renk atamalarını temsil eder."""
+
+    def __init__(self, color_map=None):
+        self.color_map = color_map or {}
+
+
 class Algorithms:
 
     @staticmethod
