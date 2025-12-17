@@ -5,9 +5,12 @@ from .weight import calculate_weight
 
 class Graph:
     def __init__(self):
+        # {id: Node}
         self.nodes = {}
+        # {(u, v): Edge}  (yönsüz graf için her iki yön de tutulur)
         self.edges = {}
 
+    # --- NODE OPERASYONLARI ---
     def add_node(self, node: Node):
         if node.id in self.nodes:
             raise ValueError("Node already exists.")
@@ -16,12 +19,16 @@ class Graph:
     def remove_node(self, node_id):
         if node_id not in self.nodes:
             return
+        # komşulardan çıkar
         for n in self.nodes.values():
             if node_id in n.neighbors:
                 n.neighbors.remove(node_id)
         del self.nodes[node_id]
+
+        # ilişkili kenarları sil
         self.edges = {k: e for k, e in self.edges.items() if node_id not in k}
 
+    # --- EDGE OPERASYONLARI ---
     def add_edge(self, u, v):
         if u not in self.nodes or v not in self.nodes:
             raise ValueError("Node not found.")
@@ -45,11 +52,13 @@ class Graph:
             del self.edges[(u, v)]
         if (v, u) in self.edges:
             del self.edges[(v, u)]
+        # komşuluklardan çıkar
         if u in self.nodes and v in self.nodes[u].neighbors:
             self.nodes[u].neighbors.remove(v)
         if v in self.nodes and u in self.nodes[v].neighbors:
             self.nodes[v].neighbors.remove(u)
 
+    # --- YARDIMCI ÇIKTILAR ---
     def adjacency_list(self):
         return {nid: list(node.neighbors) for nid, node in self.nodes.items()}
 
@@ -63,6 +72,7 @@ class Graph:
         return ids, matrix
 
     def recalculate_weights_for_node(self, node_id):
+        """Bir node'un özellikleri değiştiğinde ilgili kenar ağırlıklarını güncelle."""
         if node_id not in self.nodes:
             return
         for (u, v), edge in list(self.edges.items()):

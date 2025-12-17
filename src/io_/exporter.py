@@ -19,6 +19,7 @@ class Exporter:
                 }
             )
 
+        # yönsüz grafi JSON'da tekil kenarlarla sakla
         seen_edges = set()
         for (u, v), e in graph.edges.items():
             key = tuple(sorted((u, v)))

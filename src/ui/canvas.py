@@ -78,14 +78,15 @@ class Canvas(QWidget):
 
     def _calculate_layout(self):
         import math
+
         self.positions.clear()
         node_count = len(self.graph.nodes)
         if node_count == 0:
             return
-        
+
         nodes = list(self.graph.nodes.values())
         center_x, center_y = 500, 500
-        
+
         if node_count == 1:
             self.positions[nodes[0].id] = (center_x, center_y)
         elif node_count <= 4:
@@ -106,18 +107,18 @@ class Canvas(QWidget):
             layers = int(math.ceil(math.sqrt(node_count / 8))) + 1
             placed = 0
             layer = 0
-            
+
             while placed < node_count:
                 if layer == 0:
                     self.positions[nodes[placed].id] = (center_x, center_y)
                     placed += 1
                     layer += 1
                     continue
-                
+
                 nodes_in_layer = min(8 * layer, node_count - placed)
                 if nodes_in_layer <= 0:
                     break
-                    
+
                 radius = 120 + layer * 100
                 for i in range(nodes_in_layer):
                     if placed >= node_count:
@@ -128,15 +129,15 @@ class Canvas(QWidget):
                     self.positions[nodes[placed].id] = (x, y)
                     placed += 1
                 layer += 1
-        
+
         if not self.positions:
             return
-            
+
         max_x = max(pos[0] for pos in self.positions.values()) + self.radius * 2
         max_y = max(pos[1] for pos in self.positions.values()) + self.radius * 2
         min_x = min(pos[0] for pos in self.positions.values()) - self.radius * 2
         min_y = min(pos[1] for pos in self.positions.values()) - self.radius * 2
-        
+
         width = max(1000, int(max_x - min_x + 300))
         height = max(800, int(max_y - min_y + 300))
         self.setMinimumSize(width, height)
@@ -183,13 +184,28 @@ class Canvas(QWidget):
             ey = y2 - uy * r
 
             painter.drawLine(int(sx), int(sy), int(ex), int(ey))
-            
+
+            # Kenar ağırlığını çizginin hafif yanına yaz
             if len(self.graph.nodes) <= 20:
                 mid_x = (sx + ex) / 2
                 mid_y = (sy + ey) / 2
+
+                offset = 14
+                nx = -uy
+                ny = ux
+                label_x = mid_x + nx * offset
+                label_y = mid_y + ny * offset
+
                 weight_text = f"{edge.weight:.2f}"
+                old_font = painter.font()
+                weight_font = QFont(old_font)
+                weight_font.setPointSize(max(8, old_font.pointSize() + 1))
+                weight_font.setBold(True)
+                painter.setFont(weight_font)
+
                 painter.setPen(QColor(255, 255, 150))
-                painter.drawText(int(mid_x - 15), int(mid_y), weight_text)
+                painter.drawText(int(label_x - 15), int(label_y), weight_text)
+                painter.setFont(old_font)
 
         font = QFont("Segoe UI", 10)
         painter.setFont(font)

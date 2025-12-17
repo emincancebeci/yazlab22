@@ -39,12 +39,12 @@ class App(QMainWindow):
         splitter = QSplitter(Qt.Horizontal)
 
         self.canvas = Canvas(self.graph, node_click_callback=self.on_node_clicked)
-        
+
         scroll_area = QScrollArea()
         scroll_area.setWidgetResizable(True)
         scroll_area.setWidget(self.canvas)
         scroll_area.setStyleSheet("QScrollArea { border: none; background-color: #121212; }")
-        
+
         splitter.addWidget(scroll_area)
 
         panel = QWidget()
@@ -61,11 +61,11 @@ class App(QMainWindow):
 
         btn_bfs = QPushButton("BFS")
         btn_dfs = QPushButton("DFS")
-        btn_dijkstra = QPushButton("En Kısa Yol (Dijkstra)")
-        btn_astar = QPushButton("En Kısa Yol (A*)")
-        btn_components = QPushButton("Bağlı Bileşenler")
-        btn_degree = QPushButton("Derece Merkezilik (Top 5)")
-        btn_welsh = QPushButton("Welsh-Powell Renklendirme")
+        btn_dijkstra = QPushButton("Dijkstra (En kısa yol)")
+        btn_astar = QPushButton("A* (En kısa yol)")
+        btn_components = QPushButton("Bağlı bileşenler")
+        btn_degree = QPushButton("Derece (Top 5)")
+        btn_welsh = QPushButton("Welsh-Powell renk")
 
         btn_bfs.clicked.connect(self.run_bfs)
         btn_dfs.clicked.connect(self.run_dfs)
@@ -75,7 +75,10 @@ class App(QMainWindow):
         btn_degree.clicked.connect(self.run_degree)
         btn_welsh.clicked.connect(self.run_welsh)
 
-        for btn in [btn_bfs, btn_dfs, btn_dijkstra, btn_astar, btn_components, btn_degree, btn_welsh]:
+        algo_buttons = [btn_bfs, btn_dfs, btn_dijkstra, btn_astar, btn_components, btn_degree, btn_welsh]
+        for btn in algo_buttons:
+            btn.setMinimumHeight(30)
+            btn.setMinimumWidth(220)
             panel_layout.addWidget(btn)
 
         panel_layout.addWidget(QLabel("Kullanıcı (Node) İşlemleri"))
@@ -90,22 +93,28 @@ class App(QMainWindow):
         self.node_baglanti_input = QLineEdit()
         self.node_baglanti_input.setPlaceholderText("Bağlantı sayısı")
 
-        for w in [
+        node_inputs = [
             self.node_id_input,
             self.node_name_input,
             self.node_aktiflik_input,
             self.node_etkilesim_input,
             self.node_baglanti_input,
-        ]:
+        ]
+        for w in node_inputs:
+            w.setMinimumHeight(26)
+            w.setMinimumWidth(220)
             panel_layout.addWidget(w)
 
-        btn_node_add = QPushButton("Node Ekle")
-        btn_node_update = QPushButton("Node Güncelle")
-        btn_node_delete = QPushButton("Node Sil")
+        btn_node_add = QPushButton("Node ekle")
+        btn_node_update = QPushButton("Node güncelle")
+        btn_node_delete = QPushButton("Node sil")
         btn_node_add.clicked.connect(self.add_node)
         btn_node_update.clicked.connect(self.update_node)
         btn_node_delete.clicked.connect(self.delete_node)
-        for btn in [btn_node_add, btn_node_update, btn_node_delete]:
+        node_buttons = [btn_node_add, btn_node_update, btn_node_delete]
+        for btn in node_buttons:
+            btn.setMinimumHeight(28)
+            btn.setMinimumWidth(220)
             panel_layout.addWidget(btn)
 
         panel_layout.addWidget(QLabel("Bağlantı (Edge) İşlemleri"))
@@ -113,23 +122,29 @@ class App(QMainWindow):
         self.edge_u_input.setPlaceholderText("Kaynak id (u)")
         self.edge_v_input = QLineEdit()
         self.edge_v_input.setPlaceholderText("Hedef id (v)")
-        panel_layout.addWidget(self.edge_u_input)
-        panel_layout.addWidget(self.edge_v_input)
+        edge_inputs = [self.edge_u_input, self.edge_v_input]
+        for w in edge_inputs:
+            w.setMinimumHeight(26)
+            w.setMinimumWidth(220)
+            panel_layout.addWidget(w)
 
-        btn_edge_add = QPushButton("Edge Ekle")
-        btn_edge_delete = QPushButton("Edge Sil")
+        btn_edge_add = QPushButton("Edge ekle")
+        btn_edge_delete = QPushButton("Edge sil")
         btn_edge_add.clicked.connect(self.add_edge)
         btn_edge_delete.clicked.connect(self.delete_edge)
-        for btn in [btn_edge_add, btn_edge_delete]:
+        edge_buttons = [btn_edge_add, btn_edge_delete]
+        for btn in edge_buttons:
+            btn.setMinimumHeight(28)
+            btn.setMinimumWidth(220)
             panel_layout.addWidget(btn)
 
         btn_export_json = QPushButton("JSON dışa aktar")
         btn_export_csv = QPushButton("CSV dışa aktar")
         btn_adj_list = QPushButton("Komşuluk listesi CSV")
         btn_adj_matrix = QPushButton("Komşuluk matrisi CSV")
-        btn_import_json = QPushButton("JSON içe aktar (graph_export.json)")
-        btn_import_csv = QPushButton("CSV içe aktar (graph_export.csv)")
-        btn_reset = QPushButton("Başlangıç grafına dön")
+        btn_import_json = QPushButton("JSON içe aktar")
+        btn_import_csv = QPushButton("CSV içe aktar")
+        btn_reset = QPushButton("Başlangıç grafa dön")
 
         btn_export_json.clicked.connect(self.export_json)
         btn_export_csv.clicked.connect(self.export_csv)
@@ -140,7 +155,7 @@ class App(QMainWindow):
         btn_reset.clicked.connect(self.reset_graph)
 
         panel_layout.addWidget(QLabel("Veri içe/dışa aktarım"))
-        for btn in [
+        io_buttons = [
             btn_export_json,
             btn_export_csv,
             btn_adj_list,
@@ -148,7 +163,10 @@ class App(QMainWindow):
             btn_import_json,
             btn_import_csv,
             btn_reset,
-        ]:
+        ]
+        for btn in io_buttons:
+            btn.setMinimumHeight(30)
+            btn.setMinimumWidth(220)
             panel_layout.addWidget(btn)
 
         panel_layout.addStretch()
@@ -160,7 +178,8 @@ class App(QMainWindow):
         self.result = QTextEdit()
         self.result.setReadOnly(True)
         self.result.setMinimumHeight(200)
-        self.result.setStyleSheet("""
+        self.result.setStyleSheet(
+            """
             QTextEdit {
                 background-color: #1f1f1f;
                 border: 2px solid #444444;
@@ -170,7 +189,8 @@ class App(QMainWindow):
                 font-family: 'Consolas', 'Courier New', monospace;
                 font-size: 11px;
             }
-        """)
+        """
+        )
 
         main_layout.addWidget(splitter, stretch=3)
         main_layout.addWidget(QLabel("Sonuçlar"), stretch=0)
@@ -232,7 +252,7 @@ class App(QMainWindow):
         self.canvas.graph = self.graph
         self.canvas.clear_path()
         self.canvas.set_colors({})
-        if hasattr(self.canvas, '_calculate_layout'):
+        if hasattr(self.canvas, "_calculate_layout"):
             self.canvas._calculate_layout()
         self.canvas.update()
 

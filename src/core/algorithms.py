@@ -1,23 +1,8 @@
 from queue import PriorityQueue
 import math
 
-
-class Algorithm:
-    def __init__(self, name: str):
-        self.name = name
-        self.duration_ms = 0.0
-        self.result = None
-
-    def run(self, graph, **kwargs):
-        raise NotImplementedError
-
-
-class Coloring:
-    def __init__(self, color_map=None):
-        self.color_map = color_map or {}
-
-
 class Algorithms:
+
     @staticmethod
     def bfs(graph, start):
         visited = []
@@ -43,24 +28,20 @@ class Algorithms:
         return visited
 
     @staticmethod
-    def dijkstra(graph, start_id, end_id):
-        if start_id not in graph.nodes or end_id not in graph.nodes:
+    def dijkstra(graph, start, end):
+        if start not in graph.nodes or end not in graph.nodes:
             return [], float("inf")
 
-        dist = {nid: float("inf") for nid in graph.nodes}
-        prev = {}
-
-        dist[start_id] = 0
+        dist = {n: float("inf") for n in graph.nodes}
+        dist[start] = 0
         pq = PriorityQueue()
-        pq.put((0, start_id))
+        pq.put((0, start))
+        prev = {}
 
         while not pq.empty():
             curr_dist, u = pq.get()
 
-            if curr_dist > dist[u]:
-                continue
-
-            if u == end_id:
+            if u == end:
                 break
 
             for v in graph.nodes[u].neighbors:
@@ -72,22 +53,27 @@ class Algorithms:
                     prev[v] = u
                     pq.put((new_dist, v))
 
-        if end_id not in prev and start_id != end_id:
+        # PATH ÇIKAR
+        if dist[end] == float("inf"):
             return [], float("inf")
 
-        path = [end_id]
-        while path[-1] != start_id:
-            path.append(prev[path[-1]])
+        path = [end]
+        curr = end
+        while curr in prev:
+            curr = prev[curr]
+            path.append(curr)
         path.reverse()
 
-        return path, dist[end_id]
+        return path, dist[end]
 
+    # --- A* EN KISA YOL ---
     @staticmethod
     def a_star(graph, start_id, end_id):
         if start_id not in graph.nodes or end_id not in graph.nodes:
             return [], float("inf")
 
         def heuristic(u, v):
+            # Özellik farkına dayalı öklidyen mesafe (PDF formülündeki köksüz kısım)
             n1, n2 = graph.nodes[u], graph.nodes[v]
             d1 = (n1.aktiflik - n2.aktiflik) ** 2
             d2 = (n1.etkilesim - n2.etkilesim) ** 2
@@ -113,6 +99,7 @@ class Algorithms:
             visited.add(current)
 
             if current == end_id:
+                # yol çıkar
                 path = [current]
                 while current in came_from:
                     current = came_from[current]
@@ -132,6 +119,7 @@ class Algorithms:
 
         return [], float("inf")
 
+    # --- BAĞLI BİLEŞENLER ---
     @staticmethod
     def connected_components(graph):
         visited = set()
@@ -154,6 +142,7 @@ class Algorithms:
             components.append(comp)
         return components
 
+    # --- DERECE MERKEZİLİK (TOP N) ---
     @staticmethod
     def degree_centrality(graph, top_n=5):
         degrees = []
@@ -162,8 +151,10 @@ class Algorithms:
         degrees.sort(key=lambda x: x[1], reverse=True)
         return degrees[:top_n]
 
+    # --- WELSH-POWELL RENKLENDİRME ---
     @staticmethod
     def welsh_powell(graph):
+        # node'ları dereceye göre azalan sırala
         order = sorted(graph.nodes.keys(), key=lambda nid: len(graph.nodes[nid].neighbors), reverse=True)
         color_assignment = {}
         current_color = 0
@@ -172,6 +163,7 @@ class Algorithms:
             if nid in color_assignment:
                 continue
             color_assignment[nid] = current_color
+            # aynı renge atanabilecek diğer düğümler
             for other in order:
                 if other in color_assignment:
                     continue
