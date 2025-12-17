@@ -9,10 +9,7 @@ from io_.loader import Loader
 
 
 def main():
-   
     base_dir = os.path.dirname(os.path.abspath(__file__))
-
-    
     graph_path = os.path.join(base_dir, "data", "graph.json")
 
     try:

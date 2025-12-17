@@ -19,8 +19,12 @@ class Exporter:
                 }
             )
 
+        seen_edges = set()
         for (u, v), e in graph.edges.items():
-            data["edges"].append({"from": u, "to": v, "weight": e.weight})
+            key = tuple(sorted((u, v)))
+            if key not in seen_edges:
+                data["edges"].append({"from": u, "to": v, "weight": e.weight})
+                seen_edges.add(key)
 
         with open(path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=4)

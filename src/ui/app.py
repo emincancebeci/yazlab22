@@ -9,7 +9,10 @@ from PyQt5.QtWidgets import (
     QLabel,
     QLineEdit,
     QTextEdit,
+    QScrollArea,
+    QSplitter,
 )
+from PyQt5.QtCore import Qt
 from core.algorithms import Algorithms
 from core.node import Node
 from io_.exporter import Exporter
@@ -24,17 +27,25 @@ class App(QMainWindow):
         self.graph = graph
         self.initial_graph_path = initial_graph_path
         self.setWindowTitle("Sosyal Ağ Analizi")
-        self.resize(1200, 700)
+        self.resize(1400, 800)
 
         self.base_dir = os.path.dirname(os.path.dirname(__file__))
         self.data_dir = os.path.join(self.base_dir, "data")
         os.makedirs(self.data_dir, exist_ok=True)
 
         main_widget = QWidget()
-        main_layout = QHBoxLayout(main_widget)
+        main_layout = QVBoxLayout(main_widget)
+
+        splitter = QSplitter(Qt.Horizontal)
 
         self.canvas = Canvas(self.graph, node_click_callback=self.on_node_clicked)
-        main_layout.addWidget(self.canvas, stretch=3)
+        
+        scroll_area = QScrollArea()
+        scroll_area.setWidgetResizable(True)
+        scroll_area.setWidget(self.canvas)
+        scroll_area.setStyleSheet("QScrollArea { border: none; background-color: #121212; }")
+        
+        splitter.addWidget(scroll_area)
 
         panel = QWidget()
         panel_layout = QVBoxLayout(panel)
@@ -140,13 +151,30 @@ class App(QMainWindow):
         ]:
             panel_layout.addWidget(btn)
 
-        self.result = QTextEdit()
-        self.result.setReadOnly(True)
-        panel_layout.addWidget(QLabel("Sonuç"))
-        panel_layout.addWidget(self.result)
         panel_layout.addStretch()
 
-        main_layout.addWidget(panel, stretch=1)
+        splitter.addWidget(panel)
+        splitter.setStretchFactor(0, 3)
+        splitter.setStretchFactor(1, 1)
+
+        self.result = QTextEdit()
+        self.result.setReadOnly(True)
+        self.result.setMinimumHeight(200)
+        self.result.setStyleSheet("""
+            QTextEdit {
+                background-color: #1f1f1f;
+                border: 2px solid #444444;
+                border-radius: 4px;
+                padding: 8px;
+                color: #f0f0f0;
+                font-family: 'Consolas', 'Courier New', monospace;
+                font-size: 11px;
+            }
+        """)
+
+        main_layout.addWidget(splitter, stretch=3)
+        main_layout.addWidget(QLabel("Sonuçlar"), stretch=0)
+        main_layout.addWidget(self.result, stretch=1)
 
         self.setCentralWidget(main_widget)
 
@@ -204,6 +232,8 @@ class App(QMainWindow):
         self.canvas.graph = self.graph
         self.canvas.clear_path()
         self.canvas.set_colors({})
+        if hasattr(self.canvas, '_calculate_layout'):
+            self.canvas._calculate_layout()
         self.canvas.update()
 
     def on_node_clicked(self, node_id):
@@ -304,7 +334,17 @@ class App(QMainWindow):
         visited = Algorithms.bfs(self.graph, start)
         t1 = time.perf_counter()
         elapsed = (t1 - t0) * 1000
-        self._set_result(f"BFS sırası: {visited}\nSüre: {elapsed:.2f} ms")
+        color_map = {}
+        for idx, node_id in enumerate(visited):
+            color_map[node_id] = idx % 9
+        self.canvas.set_colors(color_map)
+        self.canvas.set_path(visited)
+        lines = ["BFS Gezinti Sırası:"]
+        for i, node_id in enumerate(visited):
+            lines.append(f"{i+1}. Node {node_id}")
+        lines.append(f"\nToplam {len(visited)} node ziyaret edildi.")
+        lines.append(f"Süre: {elapsed:.2f} ms")
+        self._set_result("\n".join(lines))
 
     def run_dfs(self):
         start = self._parse_int(self.start_input.text())
@@ -317,7 +357,17 @@ class App(QMainWindow):
         visited = Algorithms.dfs(self.graph, start, [])
         t1 = time.perf_counter()
         elapsed = (t1 - t0) * 1000
-        self._set_result(f"DFS sırası: {visited}\nSüre: {elapsed:.2f} ms")
+        color_map = {}
+        for idx, node_id in enumerate(visited):
+            color_map[node_id] = idx % 9
+        self.canvas.set_colors(color_map)
+        self.canvas.set_path(visited)
+        lines = ["DFS Gezinti Sırası:"]
+        for i, node_id in enumerate(visited):
+            lines.append(f"{i+1}. Node {node_id}")
+        lines.append(f"\nToplam {len(visited)} node ziyaret edildi.")
+        lines.append(f"Süre: {elapsed:.2f} ms")
+        self._set_result("\n".join(lines))
 
     def run_dijkstra(self):
         start = self._parse_int(self.start_input.text())
