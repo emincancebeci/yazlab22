@@ -23,7 +23,8 @@ def main():
         return
 
     app = QApplication(sys.argv)
-    window = App(graph)
+    # Başlangıç grafı path'ini App'e ilet ki reset butonu çalışsın
+    window = App(graph, initial_graph_path=graph_path)
     window.show()
     sys.exit(app.exec_())
 

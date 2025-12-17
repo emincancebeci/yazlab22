@@ -1,40 +1,37 @@
 import json
 import csv
 
+
 class Exporter:
     @staticmethod
     def export_graph_json(graph, path):
-        data = {
-            "nodes": [],
-            "edges": []
-        }
+        data = {"nodes": [], "edges": []}
 
         for n in graph.nodes.values():
-            data["nodes"].append({
-                "id": n.id,
-                "name": n.name,
-                "aktiflik": n.aktiflik,
-                "etkilesim": n.etkilesim,
-                "baglantiSayisi": n.baglanti_sayisi,
-                "komsular": n.neighbors
-            })
+            data["nodes"].append(
+                {
+                    "id": n.id,
+                    "name": n.name,
+                    "aktiflik": n.aktiflik,
+                    "etkilesim": n.etkilesim,
+                    "baglantiSayisi": n.baglanti_sayisi,
+                    "komsular": n.neighbors,
+                }
+            )
 
+        # yönsüz grafi JSON'da tekil kenarlarla sakla
+        seen_edges = set()
         for (u, v), e in graph.edges.items():
-            data["edges"].append({
-                "from": u,
-                "to": v,
-                "weight": e.weight
-            })
+            key = tuple(sorted((u, v)))
+            if key not in seen_edges:
+                data["edges"].append({"from": u, "to": v, "weight": e.weight})
+                seen_edges.add(key)
 
         with open(path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=4)
 
     @staticmethod
     def export_graph_csv(graph, path):
-        """
-        CSV formatı: DugumId, Ozellik_I, Ozellik_II, Ozellik_III, Komsular
-        Komşular virgül ile ayrılmış id listesi.
-        """
         with open(path, "w", newline="", encoding="utf-8") as f:
             writer = csv.writer(f)
             writer.writerow(["DugumId", "Ozellik_I", "Ozellik_II", "Ozellik_III", "Komsular"])

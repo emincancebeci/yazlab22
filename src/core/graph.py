@@ -2,10 +2,13 @@ from .node import Node
 from .edge import Edge
 from .weight import calculate_weight
 
+
 class Graph:
     def __init__(self):
-        self.nodes = {}  # {id: Node}
-        self.edges = {}  # {(u, v): Edge}
+        # {id: Node}
+        self.nodes = {}
+        # {(u, v): Edge}  (yönsüz graf için her iki yön de tutulur)
+        self.edges = {}
 
     # --- NODE OPERASYONLARI ---
     def add_node(self, node: Node):
@@ -29,10 +32,8 @@ class Graph:
     def add_edge(self, u, v):
         if u not in self.nodes or v not in self.nodes:
             raise ValueError("Node not found.")
-
         if u == v:
             raise ValueError("Self-loop edge is not allowed.")
-
         if (u, v) in self.edges or (v, u) in self.edges:
             raise ValueError("Edge already exists.")
 
@@ -41,7 +42,7 @@ class Graph:
 
         edge = Edge(u, v, w)
         self.edges[(u, v)] = edge
-        self.edges[(v, u)] = edge  # yönsüz grafik
+        self.edges[(v, u)] = edge
 
         n1.add_neighbor(v)
         n2.add_neighbor(u)
@@ -69,3 +70,13 @@ class Graph:
         for (u, v), edge in self.edges.items():
             matrix[idx[u]][idx[v]] = edge.weight
         return ids, matrix
+
+    def recalculate_weights_for_node(self, node_id):
+        """Bir node'un özellikleri değiştiğinde ilgili kenar ağırlıklarını güncelle."""
+        if node_id not in self.nodes:
+            return
+        for (u, v), edge in list(self.edges.items()):
+            if u == node_id or v == node_id:
+                n1 = self.nodes[edge.source]
+                n2 = self.nodes[edge.target]
+                edge.weight = calculate_weight(n1, n2)
