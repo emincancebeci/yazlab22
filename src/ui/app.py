@@ -450,10 +450,16 @@ class App(QMainWindow):
         for idx, (nid, _deg) in enumerate(centrality):
             color_map[nid] = idx
         self.canvas.set_colors(color_map)
-        lines = ["Node\tDerece"]
-        for nid, deg in centrality:
-            lines.append(f"{nid}\t{deg}")
-        lines.append(f"Süre: {elapsed:.2f} ms")
+        lines = ["En Etkili 5 Kullanıcı (Derece Merkezilik):"]
+        lines.append("=" * 50)
+        lines.append(f"{'Sıra':<6} {'ID':<6} {'İsim':<20} {'Derece':<8}")
+        lines.append("-" * 50)
+        for idx, (nid, deg) in enumerate(centrality, 1):
+            node = self.graph.nodes.get(nid)
+            node_name = node.name if node else f"Node{nid}"
+            lines.append(f"{idx:<6} {nid:<6} {node_name:<20} {deg:<8}")
+        lines.append("=" * 50)
+        lines.append(f"\nSüre: {elapsed:.2f} ms")
         self._set_result("\n".join(lines))
 
     def run_welsh(self):
