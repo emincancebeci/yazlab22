@@ -1,8 +1,8 @@
 # Sosyal Ağ Analizi Uygulaması
 
 **Proje Adı:** Sosyal Ağ Analizi ve Graf Görselleştirme Uygulaması  
-**Ekip Üyeleri:** [İsim 1], [İsim 2]  
-**Tarih:** Ocak 2026  
+**Ekip Üyeleri:** Emincan Cebeci, Emirhan Filiz
+**Tarih:** 28 Aralık 2025  
 **Ders:** Yazılım Geliştirme Laboratuvarı-I
 
 ---
@@ -80,7 +80,11 @@ flowchart TD
 
 #### 2.1.4. Literatür İncelemesi
 
-BFS algoritması, 1950'lerde graf teorisinde geliştirilmiştir. En kısa yol problemlerinde (ağırlıksız graflarda) ve seviye bazlı gezintilerde yaygın olarak kullanılır. Cormen et al. (2009) "Introduction to Algorithms" kitabında detaylı olarak açıklanmıştır.
+BFS algoritması, 1950'lerde graf teorisinde geliştirilmiştir. En kısa yol problemlerinde (ağırlıksız graflarda) ve seviye bazlı gezintilerde yaygın olarak kullanılır. Cormen et al. (2009) "Introduction to Algorithms" ve "Knuth – The Art of Computer Programming" kitaplarında detaylı olarak açıklanmıştır. BFS algoritmasının çeşitli literatür çalışmaları (genellikle BFS'in bias'ına yönelik çalışmalardır) listelenmiştir:
+
+1.https://ieeexplore.ieee.org/abstract/document/6027862
+2.https://ieeexplore.ieee.org/abstract/document/5608727
+3.https://www.sciencedirect.com/science/article/abs/pii/S2451904918300167
 
 ---
 
@@ -88,12 +92,12 @@ BFS algoritması, 1950'lerde graf teorisinde geliştirilmiştir. En kısa yol pr
 
 #### 2.2.1. Çalışma Mantığı
 
-DFS, bir düğümden başlayarak mümkün olduğunca derine inen, geri dönüş (backtracking) yaparak tüm düğümleri ziyaret eden bir algoritmadır. Yığın (stack) veya özyineleme kullanılır.
+DFS, bir düğümden başlayarak mümkün olduğunca derine inen, geri dönüş (backtracking) yaparak tüm düğümleri ziyaret eden bir algoritmadır. 
 
 **Algoritma Adımları:**
-1. Başlangıç düğümünü ziyaret et ve ziyaret edildi olarak işaretle
-2. Bu düğümün ziyaret edilmemiş komşuları için özyinelemeli olarak DFS çağır
-3. Tüm komşular ziyaret edildiğinde geri dön
+1. Başlangıç düğümünü ziyaret et ve ziyaret edildi olarak işaretle.
+2. Bu düğümün ziyaret edilmemiş komşuları için özyinelemeli olarak DFS çağır.
+3. Tüm komşular ziyaret edildiğinde geri dön.
 
 #### 2.2.2. Akış Diyagramı
 
@@ -119,7 +123,11 @@ flowchart TD
 
 #### 2.2.4. Literatür İncelemesi
 
-DFS, graf teorisinde temel bir algoritmadır. Topolojik sıralama, bağlı bileşen tespiti ve döngü bulma gibi problemlerde kullanılır.
+DFS, graf teorisinde temel bir algoritmadır. Topolojik sıralama, bağlı bileşen tespiti ve döngü bulma gibi problemlerde kullanılır. "Sedgewick – Algorithms" ve "Knuth – The Art of Computer Programming" gibi kaynaklarda detaylıca çalışma mantığından bahsedilir. BFS ile çokça farkları mevcuttur. Literatürde bulunan çeşitli DFS araştırmaları ve raporlarından bazıları listelenmiştir: 
+
+1.https://epubs.siam.org/doi/abs/10.1137/1.9781611975031.4
+2.https://epubs.siam.org/doi/abs/10.1137/0201010
+3.https://link.springer.com/chapter/10.1007/978-3-319-26350-2_15 (Bir graph aramasında DFS ve BFS karşılaştırması yapan bir literatür.)
 
 ---
 
@@ -174,7 +182,11 @@ flowchart TD
 
 #### 2.3.4. Literatür İncelemesi
 
-Dijkstra algoritması, 1956 yılında Edsger W. Dijkstra tarafından geliştirilmiştir. Ağırlıklı graflarda en kısa yol problemlerinin çözümünde standart algoritmadır.
+Dijkstra algoritması, 1956 yılında Edsger W. Dijkstra tarafından geliştirilmiştir. Ağırlıklı graflarda en kısa yol problemlerinin çözümünde standart algoritmadır. Djikstra, pozitif kenar ağırlıklarına sahip graflarda en kısa yol problemini çözmek için greedy yaklaşımı önermiştir. "Ahuja, Magnanti, Orlin – Network Flows" ve "Cormen et al. – Introduction to Algorithms" gibi yayınlarda üstüne değinilmiştir. Dijkstra ile ilgili bazı literatür yayınlamaları listelenmiştir:
+
+1.https://ieeexplore.ieee.org/abstract/document/886462 (Bir method ile ilgili)
+2.https://ieeexplore.ieee.org/abstract/document/5987118 (Dijkstra'nın robot yol bulma planlamasında kullanılması ile ilgili)
+3.https://www.francis-press.com/uploads/papers/TsDqeHwwuO65ArnWbN6B3cNGR6lVDnAA18PVKpPl.pdf (Dijkstra algoritmalarının uygulama ve geliştirmeleriyle ilgili)
 
 ---
 
@@ -235,7 +247,11 @@ flowchart TD
 
 #### 2.4.4. Literatür İncelemesi
 
-A* algoritması, 1968 yılında Peter Hart, Nils Nilsson ve Bertram Raphael tarafından geliştirilmiştir. Oyun programlama, robotik ve yol bulma problemlerinde yaygın olarak kullanılır.
+A* algoritması, 1968 yılında Peter Hart, Nils Nilsson ve Bertram Raphael tarafından geliştirilmiştir. Oyun programlama, robotik ve yol bulma problemlerinde yaygın olarak kullanılır. "Russell & Norvig – Artificial Intelligence: A Modern Approach" ve "Pearl – Heuristics: Intelligent Search Strategies" yayınlarında bahsedilmiştir. A* ile ilgili literatür çalışmaları listelenmiştir: 
+
+1.https://ieeexplore.ieee.org/abstract/document/5777723 (A* algoritmalarının mükemmel labirentte arama-kurtarma çalışmaları üzerine bir case-study)
+2.https://ieeexplore.ieee.org/abstract/document/6998482 (A* algoritmasının 3G İletişimli Sivil UAV(İnsansız Hava Aracı) yol bulma planlamasında kullanılmasıyla ilgili)
+3.https://ieeexplore.ieee.org/abstract/document/8811093 (A* algoritması ile insansı robotta yol bulma ve geri dönme case-study)
 
 ---
 
