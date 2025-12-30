@@ -353,7 +353,10 @@ flowchart TD
 
 #### 2.7.4. Literatür İncelemesi
 
-Welsh-Powell algoritması, 1967 yılında D.J.A. Welsh ve M.B. Powell tarafından geliştirilmiştir. Graf renklendirme problemlerinde yaklaşık çözüm sağlar.
+Welsh-Powell algoritması, 1967 yılında D.J.A. Welsh ve M.B. Powell tarafından geliştirilmiştir. Graf renklendirme problemlerinde yaklaşık çözüm sağlar. "Bondy & Murty – Graph Theory" ve "West – Introduction to Graph Theory" gibi literatür kaynaklarında algoritmadan bahsedilmektedir. 
+
+1.https://dl.acm.org/doi/abs/10.1145/3626641.3627210 (West Java datasetinde Welsh-Powell algoritması ile renklendirme ile ilgili)
+2.https://d1wqtxts1xzle7.cloudfront.net/124062979/37560-82597-1-PB-libre.pdf?1754296523=&response-content-disposition=inline%3B+filename%3DAn_analysis_between_the_Welsh_Powell_and.pdf&Expires=1767102853&Signature=ULbgPf-hOiqAZmSN3QzWH9wgZf9-5pJQXjss2E4q9ZLjW8sVc94wUGjAEvfK9rIpGxvz-BGuCQA-qKgsdiB21pHVK1b2lt4nO-5VGof-r9W-YJg1VIMZAne3qN~WDd6FXBZ2UdoCAYB1KjRjSNzUHXfx8eF5nckjq8EBIEvqYMzzhhvPYYdPPExxV~nrypKZr636PIWcwVHtLqfPUy69w~WxWKxfDOkGwtRoxbdJm~4T6KNy8mdiGwwEzNwJEShdce2t~uzbQijtP7p8TXuEuB7bTb~sem8ms2x6np4Syeh9pXAB7nFhvAXpLAksG6-ABC-yBmQiMMk7TulXqhly6A__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA (Wellsh-Powell ve DSatur Algoritmaları arasında graph renklendirme farkları ile ilgili)
 
 ---
 
@@ -517,23 +520,23 @@ Uygulama, sol tarafta graf görselleştirme alanı (Canvas), sağ tarafta kontro
 
 #### 4.1.1. Ana Ekran Özellikleri
 
-- **Graf Görselleştirme:** Düğümler daire, kenarlar çizgi olarak gösterilir
-- **Ağırlık Gösterimi:** Kenarların üzerinde ağırlık değerleri görüntülenir
-- **Etkileşimli Düğümler:** Düğümlere tıklanarak detay bilgileri görüntülenir
-- **Renklendirme:** Algoritma sonuçlarına göre düğümler renklendirilir
+- **Graf Görselleştirme:** Düğümler daire, kenarlar çizgi olarak gösterilir.
+- **Ağırlık Gösterimi:** Kenarların üzerinde ağırlık değerleri görüntülenir.
+- **Etkileşimli Düğümler:** Düğümlere tıklanarak Node adı, aktiflik derecesi, etkileşim ve bağlantı sayısı, komşu node'lar gibi ayrıntılar öğrenilir.
+- **Renklendirme:** Algoritma sonuçlarına göre düğümler renklendirilir. 
 
 #### 4.1.2. Kontrol Paneli
 
 **Algoritma Bölümü:**
 - Başlangıç ve bitiş düğüm ID'leri girilir
-- BFS, DFS, Dijkstra, A*, Bağlı Bileşenler, Derece Merkeziliği, Welsh-Powell butonları
+- BFS, DFS, Dijkstra, A*, Bağlı Bileşenler, Derece Merkeziliği, Welsh-Powell butonları, en etkili 5 kullanıcıyı gösteren (Top 5) butonu.
 
 **Düğüm İşlemleri:**
 - Düğüm ekleme, güncelleme, silme
 - Aktiflik, etkileşim, bağlantı sayısı özellikleri
 
 **Kenar İşlemleri:**
-- Kenar ekleme ve silme
+- Kenar ekleme ve silme işlemleri
 
 **Veri İşlemleri:**
 - JSON/CSV dışa aktarma
@@ -556,13 +559,13 @@ Bu formül, benzer özelliklere sahip düğümler arasında yüksek ağırlık, 
 > **Not:** Bu bölüme uygulama ekran görüntüleri eklenecektir.
 
 #### 4.3.1. Ana Ekran
-- [Ekran görüntüsü 1: Ana ekran görünümü]
+- ![20 kişilik bir graph görüntüsü.](image.png)
 
 #### 4.3.2. Algoritma Sonuçları
-- [Ekran görüntüsü 2: BFS sonuçları]
-- [Ekran görüntüsü 3: Dijkstra en kısa yol]
-- [Ekran görüntüsü 4: Welsh-Powell renklendirme]
-- [Ekran görüntüsü 5: Derece merkeziliği tablosu]
+- ![20 kişilik bir graph'ta 1 id'li node'dan 20 id'li node'a BFS ekran görüntüsü](image-1.png)
+- ![20 kişilik bir graph'ta 1 id'li node'dan 20 id'li node'a DFS ekran görüntüsü](image-2.png)
+- ![20 kişilik bir graph'ta 1 id'li node'dan 20 id'li node'a Welsh-Powell ekran görüntüsü](image-3.png)
+- ![20 kişilik bir graph'ta Derece Merkezlilik ile en etkili 5 kullanıcı ekran görüntüsü](image-4.png)
 
 ---
 
@@ -570,7 +573,7 @@ Bu formül, benzer özelliklere sahip düğümler arasında yüksek ağırlık, 
 
 ### 5.1. Test Ortamı
 
-- **İşletim Sistemi:** Windows 10/11
+- **İşletim Sistemi:** Windows 11
 - **Python Sürümü:** 3.13
 - **Kütüphaneler:** PyQt5, NetworkX (opsiyonel)
 
@@ -580,30 +583,29 @@ Bu formül, benzer özelliklere sahip düğümler arasında yüksek ağırlık, 
 
 **Test Grafı:** 20 düğüm, 33 kenar
 
-| Algoritma | Düğüm Sayısı | Kenar Sayısı | Çalışma Süresi (ms) | Sonuç |
-|-----------|--------------|--------------|---------------------|-------|
-| BFS | 20 | 33 | [Değer] | [Sonuç] |
-| DFS | 20 | 33 | [Değer] | [Sonuç] |
-| Dijkstra | 20 | 33 | [Değer] | [Sonuç] |
-| A* | 20 | 33 | [Değer] | [Sonuç] |
-| Bağlı Bileşenler | 20 | 33 | [Değer] | [Sonuç] |
-| Derece Merkeziliği | 20 | 33 | [Değer] | [Sonuç] |
-| Welsh-Powell | 20 | 33 | [Değer] | [Sonuç] |
+| Algoritma | Düğüm Sayısı | Kenar Sayısı | Çalışma Süresi (ms) 
+|-----------|--------------|--------------|---------------------
+| BFS | 20 | 33 | 0.02 |  |
+| DFS | 20 | 33 | 0.02 |
+| Dijkstra | 20 | 33 | 0.11 |
+| A* | 20 | 33 | 0.12 |
+| Bağlı Bileşenler | 20 | 33 | 0.04 |
+| Derece Merkeziliği | 20 | 33 | 0.03 |
+| Welsh-Powell | 20 | 33 | 0.07 |
 
 #### 5.2.2. Orta Ölçekli Graf (50-100 Düğüm)
 
 **Test Grafı:** [Düğüm sayısı], [Kenar sayısı]
 
-| Algoritma | Düğüm Sayısı | Kenar Sayısı | Çalışma Süresi (ms) | Sonuç |
-|-----------|--------------|--------------|---------------------|-------|
-| BFS | [Değer] | [Değer] | [Değer] | [Sonuç] |
-| DFS | [Değer] | [Değer] | [Değer] | [Sonuç] |
-| Dijkstra | [Değer] | [Değer] | [Değer] | [Sonuç] |
-| A* | [Değer] | [Değer] | [Değer] | [Sonuç] |
-| Bağlı Bileşenler | [Değer] | [Değer] | [Değer] | [Sonuç] |
-| Derece Merkeziliği | [Değer] | [Değer] | [Değer] | [Sonuç] |
-| Welsh-Powell | [Değer] | [Değer] | [Değer] | [Sonuç] |
-
+| Algoritma | Düğüm Sayısı | Kenar Sayısı | Çalışma Süresi (ms) 
+|-----------|--------------|--------------|---------------------
+| BFS | 75 | [Değer] | 0.28
+| DFS | 75 | [Değer] | 0.25 
+| Dijkstra | 75 | [Değer] | 0.29 
+| A* | 75 | [Değer] | 0.28
+| Bağlı Bileşenler | 75 | [Değer] | 0.10
+| Derece Merkeziliği | 75 | [Değer] | 0.04
+| Welsh-Powell | 75 | [Değer] | 0.32
 ### 5.3. Hata Yönetimi Testleri
 
 | Test Senaryosu | Beklenen Davranış | Sonuç |
