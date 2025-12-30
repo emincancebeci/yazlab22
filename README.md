@@ -2,6 +2,7 @@
 
 **Proje Adı:** Sosyal Ağ Analizi ve Graf Görselleştirme Uygulaması  
 **Ekip Üyeleri:** Emincan Cebeci, Emirhan Filiz
+**GitHub Linkleri:** https://github.com/emincancebeci , https://github.com/Emirhanfiliz
 **Tarih:** 28 Aralık 2025  
 **Ders:** Yazılım Geliştirme Laboratuvarı-I
 
@@ -599,13 +600,13 @@ Bu formül, benzer özelliklere sahip düğümler arasında yüksek ağırlık, 
 
 | Algoritma | Düğüm Sayısı | Kenar Sayısı | Çalışma Süresi (ms) 
 |-----------|--------------|--------------|---------------------
-| BFS | 75 | [Değer] | 0.28
-| DFS | 75 | [Değer] | 0.25 
-| Dijkstra | 75 | [Değer] | 0.29 
-| A* | 75 | [Değer] | 0.28
-| Bağlı Bileşenler | 75 | [Değer] | 0.10
-| Derece Merkeziliği | 75 | [Değer] | 0.04
-| Welsh-Powell | 75 | [Değer] | 0.32
+| BFS | 75 | 2775 | 0.28
+| DFS | 75 | 2775 | 0.25 
+| Dijkstra | 75 | 2775 | 0.29 
+| A* | 75 | 2775 | 0.28
+| Bağlı Bileşenler | 75 | 2775 | 0.10
+| Derece Merkeziliği | 75 | 2775 | 0.04
+| Welsh-Powell | 75 | 2775 | 0.32
 ### 5.3. Hata Yönetimi Testleri
 
 | Test Senaryosu | Beklenen Davranış | Sonuç |
