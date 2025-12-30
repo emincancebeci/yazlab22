@@ -1,0 +1,3193 @@
+{
+    "nodes": [
+        {
+            "id": 1,
+            "name": "Ali1",
+            "aktiflik": 0.72,
+            "etkilesim": 5.8,
+            "baglantiSayisi": 6,
+            "komsular": [
+                2,
+                7,
+                12,
+                22,
+                31,
+                70
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Veli2",
+            "aktiflik": 0.46,
+            "etkilesim": 9.2,
+            "baglantiSayisi": 4,
+            "komsular": [
+                53,
+                62,
+                63,
+                67
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Ayşe3",
+            "aktiflik": 0.74,
+            "etkilesim": 31.8,
+            "baglantiSayisi": 4,
+            "komsular": [
+                8,
+                28,
+                44,
+                52
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Fatma4",
+            "aktiflik": 0.68,
+            "etkilesim": 6.0,
+            "baglantiSayisi": 3,
+            "komsular": [
+                22,
+                49,
+                50
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Mehmet5",
+            "aktiflik": 0.44,
+            "etkilesim": 20.2,
+            "baglantiSayisi": 4,
+            "komsular": [
+                23,
+                34,
+                51,
+                59
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Zeynep6",
+            "aktiflik": 0.66,
+            "etkilesim": 26.5,
+            "baglantiSayisi": 10,
+            "komsular": [
+                8,
+                20,
+                25,
+                28,
+                37,
+                38,
+                55,
+                63,
+                72,
+                75
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Can7",
+            "aktiflik": 0.57,
+            "etkilesim": 18.5,
+            "baglantiSayisi": 7,
+            "komsular": [
+                8,
+                41,
+                61,
+                62,
+                65,
+                70,
+                75
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Elif8",
+            "aktiflik": 0.83,
+            "etkilesim": 5.2,
+            "baglantiSayisi": 6,
+            "komsular": [
+                11,
+                20,
+                21,
+                66,
+                68,
+                71
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Burak9",
+            "aktiflik": 0.75,
+            "etkilesim": 15.2,
+            "baglantiSayisi": 5,
+            "komsular": [
+                12,
+                16,
+                24,
+                31,
+                52
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Deniz10",
+            "aktiflik": 0.44,
+            "etkilesim": 27.9,
+            "baglantiSayisi": 3,
+            "komsular": [
+                32,
+                73,
+                75
+            ]
+        },
+        {
+            "id": 11,
+            "name": "Emre11",
+            "aktiflik": 0.36,
+            "etkilesim": 7.9,
+            "baglantiSayisi": 10,
+            "komsular": [
+                13,
+                27,
+                31,
+                34,
+                39,
+                41,
+                54,
+                56,
+                67,
+                73
+            ]
+        },
+        {
+            "id": 12,
+            "name": "Seda12",
+            "aktiflik": 0.69,
+            "etkilesim": 29.2,
+            "baglantiSayisi": 10,
+            "komsular": [
+                9,
+                13,
+                17,
+                34,
+                39,
+                41,
+                51,
+                59,
+                69,
+                73
+            ]
+        },
+        {
+            "id": 13,
+            "name": "Okan13",
+            "aktiflik": 0.65,
+            "etkilesim": 34.2,
+            "baglantiSayisi": 11,
+            "komsular": [
+                11,
+                17,
+                21,
+                28,
+                30,
+                32,
+                37,
+                45,
+                48,
+                65,
+                75
+            ]
+        },
+        {
+            "id": 14,
+            "name": "Gizem14",
+            "aktiflik": 0.35,
+            "etkilesim": 13.8,
+            "baglantiSayisi": 13,
+            "komsular": [
+                15,
+                18,
+                20,
+                27,
+                35,
+                37,
+                39,
+                44,
+                57,
+                65,
+                68,
+                71,
+                73
+            ]
+        },
+        {
+            "id": 15,
+            "name": "Arda15",
+            "aktiflik": 0.7,
+            "etkilesim": 30.9,
+            "baglantiSayisi": 12,
+            "komsular": [
+                17,
+                20,
+                21,
+                33,
+                36,
+                43,
+                54,
+                55,
+                57,
+                63,
+                71,
+                72
+            ]
+        },
+        {
+            "id": 16,
+            "name": "Ceren16",
+            "aktiflik": 0.42,
+            "etkilesim": 7.1,
+            "baglantiSayisi": 12,
+            "komsular": [
+                19,
+                20,
+                27,
+                32,
+                40,
+                46,
+                47,
+                48,
+                53,
+                56,
+                71,
+                72
+            ]
+        },
+        {
+            "id": 17,
+            "name": "Kaan17",
+            "aktiflik": 0.45,
+            "etkilesim": 13.7,
+            "baglantiSayisi": 4,
+            "komsular": [
+                21,
+                23,
+                25,
+                31
+            ]
+        },
+        {
+            "id": 18,
+            "name": "Melis18",
+            "aktiflik": 0.86,
+            "etkilesim": 31.0,
+            "baglantiSayisi": 9,
+            "komsular": [
+                21,
+                23,
+                32,
+                35,
+                39,
+                43,
+                49,
+                53,
+                61
+            ]
+        },
+        {
+            "id": 19,
+            "name": "Onur19",
+            "aktiflik": 0.48,
+            "etkilesim": 24.1,
+            "baglantiSayisi": 9,
+            "komsular": [
+                25,
+                26,
+                29,
+                30,
+                40,
+                45,
+                52,
+                59,
+                73
+            ]
+        },
+        {
+            "id": 20,
+            "name": "Aslı20",
+            "aktiflik": 0.41,
+            "etkilesim": 15.7,
+            "baglantiSayisi": 14,
+            "komsular": [
+                8,
+                23,
+                33,
+                36,
+                41,
+                43,
+                45,
+                50,
+                52,
+                54,
+                56,
+                66,
+                69,
+                74
+            ]
+        },
+        {
+            "id": 21,
+            "name": "Ege21",
+            "aktiflik": 0.47,
+            "etkilesim": 33.1,
+            "baglantiSayisi": 12,
+            "komsular": [
+                26,
+                39,
+                40,
+                41,
+                42,
+                43,
+                47,
+                53,
+                56,
+                65,
+                67,
+                69
+            ]
+        },
+        {
+            "id": 22,
+            "name": "Defne22",
+            "aktiflik": 0.35,
+            "etkilesim": 24.0,
+            "baglantiSayisi": 11,
+            "komsular": [
+                23,
+                27,
+                28,
+                37,
+                38,
+                39,
+                49,
+                52,
+                54,
+                56,
+                73
+            ]
+        },
+        {
+            "id": 23,
+            "name": "Efe23",
+            "aktiflik": 0.77,
+            "etkilesim": 9.9,
+            "baglantiSayisi": 10,
+            "komsular": [
+                5,
+                28,
+                37,
+                42,
+                43,
+                57,
+                58,
+                60,
+                61,
+                66
+            ]
+        },
+        {
+            "id": 24,
+            "name": "Duru24",
+            "aktiflik": 0.48,
+            "etkilesim": 32.8,
+            "baglantiSayisi": 10,
+            "komsular": [
+                26,
+                29,
+                31,
+                32,
+                40,
+                50,
+                54,
+                61,
+                64,
+                74
+            ]
+        },
+        {
+            "id": 25,
+            "name": "Aras25",
+            "aktiflik": 0.44,
+            "etkilesim": 14.7,
+            "baglantiSayisi": 3,
+            "komsular": [
+                17,
+                32,
+                52
+            ]
+        },
+        {
+            "id": 26,
+            "name": "Zeynep26",
+            "aktiflik": 0.45,
+            "etkilesim": 6.0,
+            "baglantiSayisi": 7,
+            "komsular": [
+                29,
+                32,
+                55,
+                60,
+                67,
+                68,
+                72
+            ]
+        },
+        {
+            "id": 27,
+            "name": "Kemal27",
+            "aktiflik": 0.56,
+            "etkilesim": 7.0,
+            "baglantiSayisi": 11,
+            "komsular": [
+                31,
+                36,
+                37,
+                41,
+                55,
+                57,
+                58,
+                61,
+                63,
+                65,
+                72
+            ]
+        },
+        {
+            "id": 28,
+            "name": "Leyla28",
+            "aktiflik": 0.87,
+            "etkilesim": 14.4,
+            "baglantiSayisi": 13,
+            "komsular": [
+                22,
+                30,
+                31,
+                35,
+                41,
+                43,
+                46,
+                49,
+                50,
+                53,
+                54,
+                60,
+                74
+            ]
+        },
+        {
+            "id": 29,
+            "name": "Berk29",
+            "aktiflik": 0.62,
+            "etkilesim": 31.5,
+            "baglantiSayisi": 12,
+            "komsular": [
+                35,
+                39,
+                44,
+                50,
+                51,
+                52,
+                54,
+                56,
+                60,
+                63,
+                69,
+                73
+            ]
+        },
+        {
+            "id": 30,
+            "name": "İpek30",
+            "aktiflik": 0.6,
+            "etkilesim": 12.9,
+            "baglantiSayisi": 7,
+            "komsular": [
+                13,
+                42,
+                44,
+                49,
+                53,
+                55,
+                60
+            ]
+        },
+        {
+            "id": 31,
+            "name": "Tuna31",
+            "aktiflik": 0.78,
+            "etkilesim": 21.2,
+            "baglantiSayisi": 12,
+            "komsular": [
+                33,
+                36,
+                40,
+                43,
+                45,
+                48,
+                49,
+                51,
+                54,
+                61,
+                73,
+                74
+            ]
+        },
+        {
+            "id": 32,
+            "name": "Ece32",
+            "aktiflik": 0.58,
+            "etkilesim": 22.5,
+            "baglantiSayisi": 7,
+            "komsular": [
+                39,
+                44,
+                45,
+                54,
+                65,
+                69,
+                73
+            ]
+        },
+        {
+            "id": 33,
+            "name": "Doruk33",
+            "aktiflik": 0.44,
+            "etkilesim": 34.9,
+            "baglantiSayisi": 10,
+            "komsular": [
+                35,
+                36,
+                42,
+                44,
+                46,
+                58,
+                64,
+                69,
+                72,
+                73
+            ]
+        },
+        {
+            "id": 34,
+            "name": "Selin34",
+            "aktiflik": 0.62,
+            "etkilesim": 27.7,
+            "baglantiSayisi": 4,
+            "komsular": [
+                41,
+                53,
+                61,
+                72
+            ]
+        },
+        {
+            "id": 35,
+            "name": "Kutay35",
+            "aktiflik": 0.4,
+            "etkilesim": 9.8,
+            "baglantiSayisi": 13,
+            "komsular": [
+                36,
+                39,
+                40,
+                41,
+                43,
+                46,
+                48,
+                52,
+                58,
+                61,
+                68,
+                69,
+                74
+            ]
+        },
+        {
+            "id": 36,
+            "name": "Dilara36",
+            "aktiflik": 0.57,
+            "etkilesim": 6.9,
+            "baglantiSayisi": 10,
+            "komsular": [
+                39,
+                42,
+                44,
+                52,
+                57,
+                61,
+                63,
+                72,
+                73,
+                74
+            ]
+        },
+        {
+            "id": 37,
+            "name": "Mert37",
+            "aktiflik": 0.69,
+            "etkilesim": 19.0,
+            "baglantiSayisi": 6,
+            "komsular": [
+                39,
+                40,
+                53,
+                54,
+                57,
+                58
+            ]
+        },
+        {
+            "id": 38,
+            "name": "Naz38",
+            "aktiflik": 0.93,
+            "etkilesim": 30.8,
+            "baglantiSayisi": 2,
+            "komsular": [
+                58,
+                61
+            ]
+        },
+        {
+            "id": 39,
+            "name": "Caner39",
+            "aktiflik": 0.74,
+            "etkilesim": 8.4,
+            "baglantiSayisi": 13,
+            "komsular": [
+                11,
+                18,
+                40,
+                41,
+                42,
+                43,
+                52,
+                53,
+                57,
+                61,
+                64,
+                65,
+                74
+            ]
+        },
+        {
+            "id": 40,
+            "name": "Pınar40",
+            "aktiflik": 0.79,
+            "etkilesim": 28.1,
+            "baglantiSayisi": 8,
+            "komsular": [
+                39,
+                42,
+                52,
+                53,
+                54,
+                57,
+                64,
+                66
+            ]
+        },
+        {
+            "id": 41,
+            "name": "Tolga41",
+            "aktiflik": 0.37,
+            "etkilesim": 18.0,
+            "baglantiSayisi": 10,
+            "komsular": [
+                34,
+                43,
+                50,
+                54,
+                58,
+                61,
+                65,
+                66,
+                69,
+                74
+            ]
+        },
+        {
+            "id": 42,
+            "name": "Burcu42",
+            "aktiflik": 0.3,
+            "etkilesim": 26.7,
+            "baglantiSayisi": 7,
+            "komsular": [
+                36,
+                43,
+                50,
+                57,
+                61,
+                64,
+                65
+            ]
+        },
+        {
+            "id": 43,
+            "name": "Serkan43",
+            "aktiflik": 0.93,
+            "etkilesim": 27.9,
+            "baglantiSayisi": 11,
+            "komsular": [
+                31,
+                46,
+                47,
+                49,
+                50,
+                51,
+                57,
+                64,
+                68,
+                69,
+                74
+            ]
+        },
+        {
+            "id": 44,
+            "name": "Gamze44",
+            "aktiflik": 0.89,
+            "etkilesim": 31.1,
+            "baglantiSayisi": 7,
+            "komsular": [
+                3,
+                51,
+                64,
+                65,
+                68,
+                69,
+                72
+            ]
+        },
+        {
+            "id": 45,
+            "name": "Barış45",
+            "aktiflik": 0.85,
+            "etkilesim": 20.2,
+            "baglantiSayisi": 6,
+            "komsular": [
+                46,
+                50,
+                51,
+                57,
+                69,
+                70
+            ]
+        },
+        {
+            "id": 46,
+            "name": "Özge46",
+            "aktiflik": 0.4,
+            "etkilesim": 27.9,
+            "baglantiSayisi": 10,
+            "komsular": [
+                47,
+                48,
+                49,
+                50,
+                52,
+                57,
+                58,
+                65,
+                66,
+                68
+            ]
+        },
+        {
+            "id": 47,
+            "name": "Cem47",
+            "aktiflik": 0.92,
+            "etkilesim": 32.7,
+            "baglantiSayisi": 2,
+            "komsular": [
+                43,
+                46
+            ]
+        },
+        {
+            "id": 48,
+            "name": "Selin48",
+            "aktiflik": 0.69,
+            "etkilesim": 19.7,
+            "baglantiSayisi": 4,
+            "komsular": [
+                35,
+                46,
+                66,
+                68
+            ]
+        },
+        {
+            "id": 49,
+            "name": "Kerem49",
+            "aktiflik": 0.9,
+            "etkilesim": 31.4,
+            "baglantiSayisi": 6,
+            "komsular": [
+                43,
+                46,
+                51,
+                64,
+                66,
+                69
+            ]
+        },
+        {
+            "id": 50,
+            "name": "Derya50",
+            "aktiflik": 0.46,
+            "etkilesim": 12.2,
+            "baglantiSayisi": 13,
+            "komsular": [
+                46,
+                51,
+                52,
+                53,
+                55,
+                57,
+                58,
+                60,
+                63,
+                64,
+                66,
+                67,
+                72
+            ]
+        },
+        {
+            "id": 51,
+            "name": "Umut51",
+            "aktiflik": 0.92,
+            "etkilesim": 7.6,
+            "baglantiSayisi": 11,
+            "komsular": [
+                5,
+                52,
+                53,
+                54,
+                55,
+                56,
+                57,
+                58,
+                60,
+                61,
+                71
+            ]
+        },
+        {
+            "id": 52,
+            "name": "Gamze52",
+            "aktiflik": 0.83,
+            "etkilesim": 34.3,
+            "baglantiSayisi": 11,
+            "komsular": [
+                19,
+                46,
+                50,
+                51,
+                53,
+                54,
+                55,
+                57,
+                59,
+                62,
+                64
+            ]
+        },
+        {
+            "id": 53,
+            "name": "Bora53",
+            "aktiflik": 0.8,
+            "etkilesim": 8.9,
+            "baglantiSayisi": 10,
+            "komsular": [
+                30,
+                50,
+                51,
+                52,
+                54,
+                56,
+                57,
+                58,
+                60,
+                61
+            ]
+        },
+        {
+            "id": 54,
+            "name": "Esra54",
+            "aktiflik": 0.92,
+            "etkilesim": 10.0,
+            "baglantiSayisi": 13,
+            "komsular": [
+                15,
+                20,
+                51,
+                52,
+                53,
+                55,
+                56,
+                57,
+                58,
+                60,
+                61,
+                64,
+                69
+            ]
+        },
+        {
+            "id": 55,
+            "name": "Alp55",
+            "aktiflik": 0.87,
+            "etkilesim": 17.7,
+            "baglantiSayisi": 5,
+            "komsular": [
+                50,
+                51,
+                52,
+                54,
+                57
+            ]
+        },
+        {
+            "id": 56,
+            "name": "İrem56",
+            "aktiflik": 0.9,
+            "etkilesim": 27.7,
+            "baglantiSayisi": 6,
+            "komsular": [
+                11,
+                51,
+                53,
+                54,
+                61,
+                63
+            ]
+        },
+        {
+            "id": 57,
+            "name": "Tarik57",
+            "aktiflik": 0.76,
+            "etkilesim": 17.0,
+            "baglantiSayisi": 12,
+            "komsular": [
+                50,
+                51,
+                52,
+                53,
+                54,
+                55,
+                58,
+                59,
+                63,
+                64,
+                65,
+                66
+            ]
+        },
+        {
+            "id": 58,
+            "name": "Selin58",
+            "aktiflik": 0.72,
+            "etkilesim": 18.1,
+            "baglantiSayisi": 11,
+            "komsular": [
+                23,
+                54,
+                57,
+                59,
+                60,
+                63,
+                64,
+                65,
+                66,
+                67,
+                72
+            ]
+        },
+        {
+            "id": 59,
+            "name": "Koray59",
+            "aktiflik": 0.59,
+            "etkilesim": 12.4,
+            "baglantiSayisi": 4,
+            "komsular": [
+                52,
+                57,
+                58,
+                67
+            ]
+        },
+        {
+            "id": 60,
+            "name": "Pelin60",
+            "aktiflik": 0.52,
+            "etkilesim": 22.6,
+            "baglantiSayisi": 5,
+            "komsular": [
+                50,
+                51,
+                53,
+                54,
+                58
+            ]
+        },
+        {
+            "id": 61,
+            "name": "Berkay61",
+            "aktiflik": 0.68,
+            "etkilesim": 5.2,
+            "baglantiSayisi": 13,
+            "komsular": [
+                7,
+                51,
+                53,
+                54,
+                56,
+                62,
+                63,
+                65,
+                69,
+                70,
+                73,
+                74,
+                75
+            ]
+        },
+        {
+            "id": 62,
+            "name": "Selin62",
+            "aktiflik": 0.34,
+            "etkilesim": 7.0,
+            "baglantiSayisi": 2,
+            "komsular": [
+                52,
+                61
+            ]
+        },
+        {
+            "id": 63,
+            "name": "Tolga63",
+            "aktiflik": 0.86,
+            "etkilesim": 7.1,
+            "baglantiSayisi": 6,
+            "komsular": [
+                36,
+                50,
+                56,
+                57,
+                58,
+                61
+            ]
+        },
+        {
+            "id": 64,
+            "name": "Gizem64",
+            "aktiflik": 0.48,
+            "etkilesim": 19.6,
+            "baglantiSayisi": 9,
+            "komsular": [
+                54,
+                57,
+                58,
+                66,
+                67,
+                69,
+                71,
+                73,
+                74
+            ]
+        },
+        {
+            "id": 65,
+            "name": "Eren65",
+            "aktiflik": 0.39,
+            "etkilesim": 33.1,
+            "baglantiSayisi": 9,
+            "komsular": [
+                57,
+                58,
+                61,
+                66,
+                69,
+                71,
+                72,
+                73,
+                74
+            ]
+        },
+        {
+            "id": 66,
+            "name": "Duygu66",
+            "aktiflik": 0.67,
+            "etkilesim": 12.3,
+            "baglantiSayisi": 9,
+            "komsular": [
+                57,
+                58,
+                64,
+                65,
+                67,
+                68,
+                69,
+                70,
+                72
+            ]
+        },
+        {
+            "id": 67,
+            "name": "Ozan67",
+            "aktiflik": 0.82,
+            "etkilesim": 10.7,
+            "baglantiSayisi": 7,
+            "komsular": [
+                2,
+                50,
+                58,
+                59,
+                64,
+                66,
+                74
+            ]
+        },
+        {
+            "id": 68,
+            "name": "Selin68",
+            "aktiflik": 0.73,
+            "etkilesim": 15.6,
+            "baglantiSayisi": 5,
+            "komsular": [
+                66,
+                69,
+                71,
+                73,
+                74
+            ]
+        },
+        {
+            "id": 69,
+            "name": "Burak69",
+            "aktiflik": 0.6,
+            "etkilesim": 26.9,
+            "baglantiSayisi": 8,
+            "komsular": [
+                54,
+                61,
+                64,
+                65,
+                66,
+                68,
+                72,
+                73
+            ]
+        },
+        {
+            "id": 70,
+            "name": "Cansu70",
+            "aktiflik": 0.72,
+            "etkilesim": 24.4,
+            "baglantiSayisi": 3,
+            "komsular": [
+                45,
+                61,
+                66
+            ]
+        },
+        {
+            "id": 71,
+            "name": "Emir71",
+            "aktiflik": 0.56,
+            "etkilesim": 15.2,
+            "baglantiSayisi": 5,
+            "komsular": [
+                8,
+                51,
+                64,
+                65,
+                68
+            ]
+        },
+        {
+            "id": 72,
+            "name": "Selin72",
+            "aktiflik": 0.46,
+            "etkilesim": 10.7,
+            "baglantiSayisi": 6,
+            "komsular": [
+                50,
+                58,
+                65,
+                66,
+                69,
+                74
+            ]
+        },
+        {
+            "id": 73,
+            "name": "Kaan73",
+            "aktiflik": 0.39,
+            "etkilesim": 10.5,
+            "baglantiSayisi": 9,
+            "komsular": [
+                14,
+                19,
+                61,
+                64,
+                65,
+                68,
+                69,
+                74,
+                75
+            ]
+        },
+        {
+            "id": 74,
+            "name": "Zeynep74",
+            "aktiflik": 0.46,
+            "etkilesim": 32.7,
+            "baglantiSayisi": 8,
+            "komsular": [
+                61,
+                64,
+                65,
+                67,
+                68,
+                72,
+                73,
+                75
+            ]
+        },
+        {
+            "id": 75,
+            "name": "Arda75",
+            "aktiflik": 0.83,
+            "etkilesim": 30.7,
+            "baglantiSayisi": 4,
+            "komsular": [
+                13,
+                61,
+                73,
+                74
+            ]
+        }
+    ],
+    "edges": [
+        {
+            "from": 1,
+            "to": 7
+        },
+        {
+            "from": 1,
+            "to": 70
+        },
+        {
+            "from": 1,
+            "to": 2
+        },
+        {
+            "from": 1,
+            "to": 12
+        },
+        {
+            "from": 1,
+            "to": 31
+        },
+        {
+            "from": 1,
+            "to": 22
+        },
+        {
+            "from": 2,
+            "to": 53
+        },
+        {
+            "from": 2,
+            "to": 63
+        },
+        {
+            "from": 2,
+            "to": 62
+        },
+        {
+            "from": 3,
+            "to": 28
+        },
+        {
+            "from": 3,
+            "to": 52
+        },
+        {
+            "from": 3,
+            "to": 8
+        },
+        {
+            "from": 4,
+            "to": 22
+        },
+        {
+            "from": 4,
+            "to": 49
+        },
+        {
+            "from": 4,
+            "to": 50
+        },
+        {
+            "from": 5,
+            "to": 34
+        },
+        {
+            "from": 5,
+            "to": 59
+        },
+        {
+            "from": 6,
+            "to": 37
+        },
+        {
+            "from": 6,
+            "to": 55
+        },
+        {
+            "from": 6,
+            "to": 72
+        },
+        {
+            "from": 6,
+            "to": 63
+        },
+        {
+            "from": 6,
+            "to": 20
+        },
+        {
+            "from": 6,
+            "to": 25
+        },
+        {
+            "from": 6,
+            "to": 38
+        },
+        {
+            "from": 6,
+            "to": 28
+        },
+        {
+            "from": 6,
+            "to": 8
+        },
+        {
+            "from": 6,
+            "to": 75
+        },
+        {
+            "from": 7,
+            "to": 70
+        },
+        {
+            "from": 7,
+            "to": 8
+        },
+        {
+            "from": 7,
+            "to": 41
+        },
+        {
+            "from": 7,
+            "to": 75
+        },
+        {
+            "from": 7,
+            "to": 62
+        },
+        {
+            "from": 7,
+            "to": 65
+        },
+        {
+            "from": 8,
+            "to": 68
+        },
+        {
+            "from": 8,
+            "to": 21
+        },
+        {
+            "from": 8,
+            "to": 66
+        },
+        {
+            "from": 8,
+            "to": 11
+        },
+        {
+            "from": 9,
+            "to": 24
+        },
+        {
+            "from": 9,
+            "to": 31
+        },
+        {
+            "from": 9,
+            "to": 52
+        },
+        {
+            "from": 9,
+            "to": 16
+        },
+        {
+            "from": 10,
+            "to": 73
+        },
+        {
+            "from": 10,
+            "to": 32
+        },
+        {
+            "from": 10,
+            "to": 75
+        },
+        {
+            "from": 11,
+            "to": 54
+        },
+        {
+            "from": 11,
+            "to": 73
+        },
+        {
+            "from": 11,
+            "to": 67
+        },
+        {
+            "from": 11,
+            "to": 41
+        },
+        {
+            "from": 11,
+            "to": 34
+        },
+        {
+            "from": 11,
+            "to": 27
+        },
+        {
+            "from": 11,
+            "to": 31
+        },
+        {
+            "from": 12,
+            "to": 34
+        },
+        {
+            "from": 12,
+            "to": 51
+        },
+        {
+            "from": 12,
+            "to": 17
+        },
+        {
+            "from": 12,
+            "to": 39
+        },
+        {
+            "from": 12,
+            "to": 59
+        },
+        {
+            "from": 12,
+            "to": 41
+        },
+        {
+            "from": 12,
+            "to": 73
+        },
+        {
+            "from": 12,
+            "to": 13
+        },
+        {
+            "from": 12,
+            "to": 69
+        },
+        {
+            "from": 13,
+            "to": 28
+        },
+        {
+            "from": 13,
+            "to": 65
+        },
+        {
+            "from": 13,
+            "to": 17
+        },
+        {
+            "from": 13,
+            "to": 45
+        },
+        {
+            "from": 13,
+            "to": 32
+        },
+        {
+            "from": 13,
+            "to": 48
+        },
+        {
+            "from": 13,
+            "to": 37
+        },
+        {
+            "from": 13,
+            "to": 21
+        },
+        {
+            "from": 14,
+            "to": 57
+        },
+        {
+            "from": 14,
+            "to": 39
+        },
+        {
+            "from": 14,
+            "to": 68
+        },
+        {
+            "from": 14,
+            "to": 71
+        },
+        {
+            "from": 14,
+            "to": 18
+        },
+        {
+            "from": 14,
+            "to": 15
+        },
+        {
+            "from": 14,
+            "to": 20
+        },
+        {
+            "from": 14,
+            "to": 35
+        },
+        {
+            "from": 14,
+            "to": 37
+        },
+        {
+            "from": 14,
+            "to": 27
+        },
+        {
+            "from": 14,
+            "to": 44
+        },
+        {
+            "from": 14,
+            "to": 65
+        },
+        {
+            "from": 15,
+            "to": 63
+        },
+        {
+            "from": 15,
+            "to": 33
+        },
+        {
+            "from": 15,
+            "to": 55
+        },
+        {
+            "from": 15,
+            "to": 36
+        },
+        {
+            "from": 15,
+            "to": 43
+        },
+        {
+            "from": 15,
+            "to": 17
+        },
+        {
+            "from": 15,
+            "to": 21
+        },
+        {
+            "from": 15,
+            "to": 57
+        },
+        {
+            "from": 15,
+            "to": 71
+        },
+        {
+            "from": 15,
+            "to": 72
+        },
+        {
+            "from": 15,
+            "to": 20
+        },
+        {
+            "from": 16,
+            "to": 48
+        },
+        {
+            "from": 16,
+            "to": 71
+        },
+        {
+            "from": 16,
+            "to": 19
+        },
+        {
+            "from": 16,
+            "to": 56
+        },
+        {
+            "from": 16,
+            "to": 40
+        },
+        {
+            "from": 16,
+            "to": 47
+        },
+        {
+            "from": 16,
+            "to": 46
+        },
+        {
+            "from": 16,
+            "to": 27
+        },
+        {
+            "from": 16,
+            "to": 32
+        },
+        {
+            "from": 16,
+            "to": 72
+        },
+        {
+            "from": 16,
+            "to": 53
+        },
+        {
+            "from": 16,
+            "to": 20
+        },
+        {
+            "from": 17,
+            "to": 31
+        },
+        {
+            "from": 17,
+            "to": 21
+        },
+        {
+            "from": 17,
+            "to": 23
+        },
+        {
+            "from": 18,
+            "to": 53
+        },
+        {
+            "from": 18,
+            "to": 23
+        },
+        {
+            "from": 18,
+            "to": 43
+        },
+        {
+            "from": 18,
+            "to": 32
+        },
+        {
+            "from": 18,
+            "to": 35
+        },
+        {
+            "from": 18,
+            "to": 21
+        },
+        {
+            "from": 18,
+            "to": 49
+        },
+        {
+            "from": 18,
+            "to": 61
+        },
+        {
+            "from": 19,
+            "to": 29
+        },
+        {
+            "from": 19,
+            "to": 26
+        },
+        {
+            "from": 19,
+            "to": 59
+        },
+        {
+            "from": 19,
+            "to": 45
+        },
+        {
+            "from": 19,
+            "to": 40
+        },
+        {
+            "from": 19,
+            "to": 30
+        },
+        {
+            "from": 19,
+            "to": 25
+        },
+        {
+            "from": 20,
+            "to": 52
+        },
+        {
+            "from": 20,
+            "to": 43
+        },
+        {
+            "from": 20,
+            "to": 36
+        },
+        {
+            "from": 20,
+            "to": 45
+        },
+        {
+            "from": 20,
+            "to": 66
+        },
+        {
+            "from": 20,
+            "to": 69
+        },
+        {
+            "from": 20,
+            "to": 23
+        },
+        {
+            "from": 20,
+            "to": 56
+        },
+        {
+            "from": 20,
+            "to": 41
+        },
+        {
+            "from": 20,
+            "to": 50
+        },
+        {
+            "from": 20,
+            "to": 74
+        },
+        {
+            "from": 20,
+            "to": 33
+        },
+        {
+            "from": 21,
+            "to": 56
+        },
+        {
+            "from": 21,
+            "to": 67
+        },
+        {
+            "from": 21,
+            "to": 69
+        },
+        {
+            "from": 21,
+            "to": 26
+        },
+        {
+            "from": 21,
+            "to": 47
+        },
+        {
+            "from": 21,
+            "to": 43
+        },
+        {
+            "from": 21,
+            "to": 41
+        },
+        {
+            "from": 21,
+            "to": 39
+        },
+        {
+            "from": 21,
+            "to": 65
+        },
+        {
+            "from": 21,
+            "to": 40
+        },
+        {
+            "from": 21,
+            "to": 53
+        },
+        {
+            "from": 21,
+            "to": 42
+        },
+        {
+            "from": 22,
+            "to": 52
+        },
+        {
+            "from": 22,
+            "to": 38
+        },
+        {
+            "from": 22,
+            "to": 54
+        },
+        {
+            "from": 22,
+            "to": 49
+        },
+        {
+            "from": 22,
+            "to": 23
+        },
+        {
+            "from": 22,
+            "to": 73
+        },
+        {
+            "from": 22,
+            "to": 39
+        },
+        {
+            "from": 22,
+            "to": 37
+        },
+        {
+            "from": 22,
+            "to": 27
+        },
+        {
+            "from": 22,
+            "to": 56
+        },
+        {
+            "from": 23,
+            "to": 42
+        },
+        {
+            "from": 23,
+            "to": 60
+        },
+        {
+            "from": 23,
+            "to": 57
+        },
+        {
+            "from": 23,
+            "to": 28
+        },
+        {
+            "from": 23,
+            "to": 66
+        },
+        {
+            "from": 23,
+            "to": 61
+        },
+        {
+            "from": 23,
+            "to": 37
+        },
+        {
+            "from": 23,
+            "to": 43
+        },
+        {
+            "from": 24,
+            "to": 31
+        },
+        {
+            "from": 24,
+            "to": 40
+        },
+        {
+            "from": 24,
+            "to": 29
+        },
+        {
+            "from": 24,
+            "to": 26
+        },
+        {
+            "from": 24,
+            "to": 32
+        },
+        {
+            "from": 24,
+            "to": 61
+        },
+        {
+            "from": 24,
+            "to": 54
+        },
+        {
+            "from": 24,
+            "to": 74
+        },
+        {
+            "from": 24,
+            "to": 50
+        },
+        {
+            "from": 24,
+            "to": 64
+        },
+        {
+            "from": 25,
+            "to": 52
+        },
+        {
+            "from": 25,
+            "to": 32
+        },
+        {
+            "from": 26,
+            "to": 55
+        },
+        {
+            "from": 26,
+            "to": 29
+        },
+        {
+            "from": 26,
+            "to": 67
+        },
+        {
+            "from": 26,
+            "to": 60
+        },
+        {
+            "from": 26,
+            "to": 72
+        },
+        {
+            "from": 26,
+            "to": 32
+        },
+        {
+            "from": 26,
+            "to": 68
+        },
+        {
+            "from": 27,
+            "to": 72
+        },
+        {
+            "from": 27,
+            "to": 41
+        },
+        {
+            "from": 27,
+            "to": 57
+        },
+        {
+            "from": 27,
+            "to": 65
+        },
+        {
+            "from": 27,
+            "to": 55
+        },
+        {
+            "from": 27,
+            "to": 58
+        },
+        {
+            "from": 27,
+            "to": 61
+        },
+        {
+            "from": 27,
+            "to": 36
+        },
+        {
+            "from": 27,
+            "to": 63
+        },
+        {
+            "from": 27,
+            "to": 31
+        },
+        {
+            "from": 27,
+            "to": 37
+        },
+        {
+            "from": 28,
+            "to": 31
+        },
+        {
+            "from": 28,
+            "to": 35
+        },
+        {
+            "from": 28,
+            "to": 43
+        },
+        {
+            "from": 28,
+            "to": 41
+        },
+        {
+            "from": 28,
+            "to": 30
+        },
+        {
+            "from": 28,
+            "to": 50
+        },
+        {
+            "from": 28,
+            "to": 54
+        },
+        {
+            "from": 28,
+            "to": 53
+        },
+        {
+            "from": 28,
+            "to": 60
+        },
+        {
+            "from": 28,
+            "to": 74
+        },
+        {
+            "from": 28,
+            "to": 49
+        },
+        {
+            "from": 28,
+            "to": 46
+        },
+        {
+            "from": 29,
+            "to": 39
+        },
+        {
+            "from": 29,
+            "to": 50
+        },
+        {
+            "from": 29,
+            "to": 54
+        },
+        {
+            "from": 29,
+            "to": 69
+        },
+        {
+            "from": 29,
+            "to": 63
+        },
+        {
+            "from": 29,
+            "to": 35
+        },
+        {
+            "from": 29,
+            "to": 56
+        },
+        {
+            "from": 29,
+            "to": 44
+        },
+        {
+            "from": 29,
+            "to": 52
+        },
+        {
+            "from": 29,
+            "to": 60
+        },
+        {
+            "from": 29,
+            "to": 51
+        },
+        {
+            "from": 29,
+            "to": 73
+        },
+        {
+            "from": 30,
+            "to": 55
+        },
+        {
+            "from": 30,
+            "to": 60
+        },
+        {
+            "from": 30,
+            "to": 49
+        },
+        {
+            "from": 30,
+            "to": 42
+        },
+        {
+            "from": 30,
+            "to": 44
+        },
+        {
+            "from": 31,
+            "to": 49
+        },
+        {
+            "from": 31,
+            "to": 36
+        },
+        {
+            "from": 31,
+            "to": 54
+        },
+        {
+            "from": 31,
+            "to": 33
+        },
+        {
+            "from": 31,
+            "to": 61
+        },
+        {
+            "from": 31,
+            "to": 45
+        },
+        {
+            "from": 31,
+            "to": 73
+        },
+        {
+            "from": 31,
+            "to": 48
+        },
+        {
+            "from": 31,
+            "to": 40
+        },
+        {
+            "from": 31,
+            "to": 74
+        },
+        {
+            "from": 31,
+            "to": 51
+        },
+        {
+            "from": 32,
+            "to": 39
+        },
+        {
+            "from": 32,
+            "to": 73
+        },
+        {
+            "from": 32,
+            "to": 45
+        },
+        {
+            "from": 32,
+            "to": 69
+        },
+        {
+            "from": 32,
+            "to": 65
+        },
+        {
+            "from": 32,
+            "to": 44
+        },
+        {
+            "from": 32,
+            "to": 54
+        },
+        {
+            "from": 33,
+            "to": 35
+        },
+        {
+            "from": 33,
+            "to": 69
+        },
+        {
+            "from": 33,
+            "to": 42
+        },
+        {
+            "from": 33,
+            "to": 36
+        },
+        {
+            "from": 33,
+            "to": 58
+        },
+        {
+            "from": 33,
+            "to": 73
+        },
+        {
+            "from": 33,
+            "to": 44
+        },
+        {
+            "from": 33,
+            "to": 64
+        },
+        {
+            "from": 33,
+            "to": 46
+        },
+        {
+            "from": 33,
+            "to": 72
+        },
+        {
+            "from": 34,
+            "to": 53
+        },
+        {
+            "from": 34,
+            "to": 72
+        },
+        {
+            "from": 34,
+            "to": 61
+        },
+        {
+            "from": 35,
+            "to": 58
+        },
+        {
+            "from": 35,
+            "to": 52
+        },
+        {
+            "from": 35,
+            "to": 40
+        },
+        {
+            "from": 35,
+            "to": 61
+        },
+        {
+            "from": 35,
+            "to": 68
+        },
+        {
+            "from": 35,
+            "to": 43
+        },
+        {
+            "from": 35,
+            "to": 46
+        },
+        {
+            "from": 35,
+            "to": 41
+        },
+        {
+            "from": 35,
+            "to": 69
+        },
+        {
+            "from": 35,
+            "to": 36
+        },
+        {
+            "from": 35,
+            "to": 39
+        },
+        {
+            "from": 35,
+            "to": 74
+        },
+        {
+            "from": 36,
+            "to": 61
+        },
+        {
+            "from": 36,
+            "to": 57
+        },
+        {
+            "from": 36,
+            "to": 44
+        },
+        {
+            "from": 36,
+            "to": 52
+        },
+        {
+            "from": 36,
+            "to": 74
+        },
+        {
+            "from": 36,
+            "to": 73
+        },
+        {
+            "from": 36,
+            "to": 39
+        },
+        {
+            "from": 36,
+            "to": 72
+        },
+        {
+            "from": 37,
+            "to": 54
+        },
+        {
+            "from": 37,
+            "to": 58
+        },
+        {
+            "from": 37,
+            "to": 57
+        },
+        {
+            "from": 37,
+            "to": 39
+        },
+        {
+            "from": 37,
+            "to": 40
+        },
+        {
+            "from": 37,
+            "to": 53
+        },
+        {
+            "from": 38,
+            "to": 58
+        },
+        {
+            "from": 38,
+            "to": 61
+        },
+        {
+            "from": 39,
+            "to": 57
+        },
+        {
+            "from": 39,
+            "to": 52
+        },
+        {
+            "from": 39,
+            "to": 65
+        },
+        {
+            "from": 39,
+            "to": 64
+        },
+        {
+            "from": 39,
+            "to": 42
+        },
+        {
+            "from": 39,
+            "to": 74
+        },
+        {
+            "from": 39,
+            "to": 61
+        },
+        {
+            "from": 39,
+            "to": 53
+        },
+        {
+            "from": 39,
+            "to": 43
+        },
+        {
+            "from": 39,
+            "to": 41
+        },
+        {
+            "from": 40,
+            "to": 42
+        },
+        {
+            "from": 40,
+            "to": 52
+        },
+        {
+            "from": 40,
+            "to": 66
+        },
+        {
+            "from": 40,
+            "to": 53
+        },
+        {
+            "from": 40,
+            "to": 64
+        },
+        {
+            "from": 40,
+            "to": 57
+        },
+        {
+            "from": 40,
+            "to": 54
+        },
+        {
+            "from": 41,
+            "to": 61
+        },
+        {
+            "from": 41,
+            "to": 50
+        },
+        {
+            "from": 41,
+            "to": 66
+        },
+        {
+            "from": 41,
+            "to": 54
+        },
+        {
+            "from": 41,
+            "to": 65
+        },
+        {
+            "from": 41,
+            "to": 58
+        },
+        {
+            "from": 41,
+            "to": 69
+        },
+        {
+            "from": 41,
+            "to": 43
+        },
+        {
+            "from": 41,
+            "to": 74
+        },
+        {
+            "from": 42,
+            "to": 50
+        },
+        {
+            "from": 42,
+            "to": 61
+        },
+        {
+            "from": 42,
+            "to": 64
+        },
+        {
+            "from": 42,
+            "to": 65
+        },
+        {
+            "from": 42,
+            "to": 43
+        },
+        {
+            "from": 42,
+            "to": 57
+        },
+        {
+            "from": 43,
+            "to": 68
+        },
+        {
+            "from": 43,
+            "to": 51
+        },
+        {
+            "from": 43,
+            "to": 69
+        },
+        {
+            "from": 43,
+            "to": 57
+        },
+        {
+            "from": 43,
+            "to": 46
+        },
+        {
+            "from": 43,
+            "to": 64
+        },
+        {
+            "from": 43,
+            "to": 50
+        },
+        {
+            "from": 43,
+            "to": 74
+        },
+        {
+            "from": 44,
+            "to": 68
+        },
+        {
+            "from": 44,
+            "to": 65
+        },
+        {
+            "from": 44,
+            "to": 51
+        },
+        {
+            "from": 44,
+            "to": 72
+        },
+        {
+            "from": 44,
+            "to": 69
+        },
+        {
+            "from": 44,
+            "to": 64
+        },
+        {
+            "from": 45,
+            "to": 69
+        },
+        {
+            "from": 45,
+            "to": 50
+        },
+        {
+            "from": 45,
+            "to": 57
+        },
+        {
+            "from": 45,
+            "to": 46
+        },
+        {
+            "from": 45,
+            "to": 51
+        },
+        {
+            "from": 46,
+            "to": 68
+        },
+        {
+            "from": 46,
+            "to": 58
+        },
+        {
+            "from": 46,
+            "to": 66
+        },
+        {
+            "from": 46,
+            "to": 65
+        },
+        {
+            "from": 46,
+            "to": 57
+        },
+        {
+            "from": 47,
+            "to": 43
+        },
+        {
+            "from": 47,
+            "to": 46
+        },
+        {
+            "from": 48,
+            "to": 46
+        },
+        {
+            "from": 48,
+            "to": 68
+        },
+        {
+            "from": 48,
+            "to": 66
+        },
+        {
+            "from": 49,
+            "to": 51
+        },
+        {
+            "from": 49,
+            "to": 64
+        },
+        {
+            "from": 49,
+            "to": 69
+        },
+        {
+            "from": 49,
+            "to": 46
+        },
+        {
+            "from": 49,
+            "to": 43
+        },
+        {
+            "from": 49,
+            "to": 66
+        },
+        {
+            "from": 50,
+            "to": 66
+        },
+        {
+            "from": 50,
+            "to": 64
+        },
+        {
+            "from": 50,
+            "to": 58
+        },
+        {
+            "from": 50,
+            "to": 46
+        },
+        {
+            "from": 50,
+            "to": 51
+        },
+        {
+            "from": 51,
+            "to": 58
+        },
+        {
+            "from": 52,
+            "to": 64
+        },
+        {
+            "from": 52,
+            "to": 46
+        },
+        {
+            "from": 52,
+            "to": 50
+        },
+        {
+            "from": 52,
+            "to": 51
+        },
+        {
+            "from": 53,
+            "to": 58
+        },
+        {
+            "from": 53,
+            "to": 52
+        },
+        {
+            "from": 53,
+            "to": 50
+        },
+        {
+            "from": 53,
+            "to": 51
+        },
+        {
+            "from": 54,
+            "to": 51
+        },
+        {
+            "from": 54,
+            "to": 53
+        },
+        {
+            "from": 54,
+            "to": 52
+        },
+        {
+            "from": 55,
+            "to": 50
+        },
+        {
+            "from": 55,
+            "to": 54
+        },
+        {
+            "from": 55,
+            "to": 51
+        },
+        {
+            "from": 55,
+            "to": 52
+        },
+        {
+            "from": 56,
+            "to": 54
+        },
+        {
+            "from": 56,
+            "to": 53
+        },
+        {
+            "from": 56,
+            "to": 51
+        },
+        {
+            "from": 57,
+            "to": 53
+        },
+        {
+            "from": 57,
+            "to": 54
+        },
+        {
+            "from": 57,
+            "to": 51
+        },
+        {
+            "from": 57,
+            "to": 52
+        },
+        {
+            "from": 57,
+            "to": 55
+        },
+        {
+            "from": 57,
+            "to": 50
+        },
+        {
+            "from": 58,
+            "to": 57
+        },
+        {
+            "from": 58,
+            "to": 54
+        },
+        {
+            "from": 59,
+            "to": 58
+        },
+        {
+            "from": 59,
+            "to": 52
+        },
+        {
+            "from": 59,
+            "to": 57
+        },
+        {
+            "from": 60,
+            "to": 53
+        },
+        {
+            "from": 60,
+            "to": 54
+        },
+        {
+            "from": 60,
+            "to": 50
+        },
+        {
+            "from": 60,
+            "to": 58
+        },
+        {
+            "from": 60,
+            "to": 51
+        },
+        {
+            "from": 61,
+            "to": 53
+        },
+        {
+            "from": 61,
+            "to": 54
+        },
+        {
+            "from": 61,
+            "to": 56
+        },
+        {
+            "from": 61,
+            "to": 51
+        },
+        {
+            "from": 62,
+            "to": 52
+        },
+        {
+            "from": 62,
+            "to": 61
+        },
+        {
+            "from": 63,
+            "to": 56
+        },
+        {
+            "from": 63,
+            "to": 61
+        },
+        {
+            "from": 63,
+            "to": 50
+        },
+        {
+            "from": 63,
+            "to": 58
+        },
+        {
+            "from": 63,
+            "to": 57
+        },
+        {
+            "from": 64,
+            "to": 58
+        },
+        {
+            "from": 64,
+            "to": 54
+        },
+        {
+            "from": 64,
+            "to": 57
+        },
+        {
+            "from": 65,
+            "to": 58
+        },
+        {
+            "from": 65,
+            "to": 61
+        },
+        {
+            "from": 65,
+            "to": 57
+        },
+        {
+            "from": 66,
+            "to": 58
+        },
+        {
+            "from": 66,
+            "to": 65
+        },
+        {
+            "from": 66,
+            "to": 64
+        },
+        {
+            "from": 66,
+            "to": 57
+        },
+        {
+            "from": 67,
+            "to": 66
+        },
+        {
+            "from": 67,
+            "to": 58
+        },
+        {
+            "from": 67,
+            "to": 64
+        },
+        {
+            "from": 68,
+            "to": 66
+        },
+        {
+            "from": 69,
+            "to": 64
+        },
+        {
+            "from": 69,
+            "to": 68
+        },
+        {
+            "from": 69,
+            "to": 61
+        },
+        {
+            "from": 69,
+            "to": 65
+        },
+        {
+            "from": 69,
+            "to": 66
+        },
+        {
+            "from": 70,
+            "to": 66
+        },
+        {
+            "from": 70,
+            "to": 61
+        },
+        {
+            "from": 71,
+            "to": 65
+        },
+        {
+            "from": 71,
+            "to": 64
+        },
+        {
+            "from": 71,
+            "to": 68
+        },
+        {
+            "from": 72,
+            "to": 65
+        },
+        {
+            "from": 72,
+            "to": 58
+        },
+        {
+            "from": 72,
+            "to": 69
+        },
+        {
+            "from": 72,
+            "to": 66
+        },
+        {
+            "from": 73,
+            "to": 64
+        },
+        {
+            "from": 73,
+            "to": 68
+        },
+        {
+            "from": 73,
+            "to": 65
+        },
+        {
+            "from": 73,
+            "to": 61
+        },
+        {
+            "from": 73,
+            "to": 69
+        },
+        {
+            "from": 74,
+            "to": 68
+        },
+        {
+            "from": 74,
+            "to": 72
+        },
+        {
+            "from": 74,
+            "to": 73
+        },
+        {
+            "from": 74,
+            "to": 64
+        },
+        {
+            "from": 75,
+            "to": 74
+        },
+        {
+            "from": 75,
+            "to": 61
+        },
+        {
+            "from": 75,
+            "to": 73
+        },
+        {
+            "from": 8,
+            "to": 20
+        },
+        {
+            "from": 13,
+            "to": 11
+        },
+        {
+            "from": 45,
+            "to": 70
+        },
+        {
+            "from": 53,
+            "to": 30
+        },
+        {
+            "from": 71,
+            "to": 8
+        },
+        {
+            "from": 50,
+            "to": 67
+        },
+        {
+            "from": 54,
+            "to": 69
+        },
+        {
+            "from": 61,
+            "to": 74
+        },
+        {
+            "from": 39,
+            "to": 11
+        },
+        {
+            "from": 51,
+            "to": 5
+        },
+        {
+            "from": 65,
+            "to": 74
+        },
+        {
+            "from": 67,
+            "to": 74
+        },
+        {
+            "from": 58,
+            "to": 23
+        },
+        {
+            "from": 22,
+            "to": 28
+        },
+        {
+            "from": 25,
+            "to": 17
+        },
+        {
+            "from": 11,
+            "to": 56
+        },
+        {
+            "from": 34,
+            "to": 41
+        },
+        {
+            "from": 9,
+            "to": 12
+        },
+        {
+            "from": 50,
+            "to": 72
+        },
+        {
+            "from": 51,
+            "to": 71
+        },
+        {
+            "from": 42,
+            "to": 36
+        },
+        {
+            "from": 67,
+            "to": 59
+        },
+        {
+            "from": 2,
+            "to": 67
+        },
+        {
+            "from": 54,
+            "to": 15
+        },
+        {
+            "from": 54,
+            "to": 20
+        },
+        {
+            "from": 19,
+            "to": 73
+        },
+        {
+            "from": 75,
+            "to": 13
+        },
+        {
+            "from": 14,
+            "to": 73
+        },
+        {
+            "from": 5,
+            "to": 23
+        },
+        {
+            "from": 19,
+            "to": 52
+        },
+        {
+            "from": 43,
+            "to": 31
+        },
+        {
+            "from": 7,
+            "to": 61
+        },
+        {
+            "from": 35,
+            "to": 48
+        },
+        {
+            "from": 3,
+            "to": 44
+        },
+        {
+            "from": 39,
+            "to": 40
+        },
+        {
+            "from": 36,
+            "to": 63
+        },
+        {
+            "from": 13,
+            "to": 30
+        },
+        {
+            "from": 18,
+            "to": 39
+        }
+    ]
+}

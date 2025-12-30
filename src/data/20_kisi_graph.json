@@ -1,0 +1,424 @@
+{
+    "nodes": [
+        {
+            "id": 1,
+            "name": "Ali",
+            "aktiflik": 0.9,
+            "etkilesim": 25,
+            "baglantiSayisi": 6,
+            "komsular": [
+                2,
+                3,
+                5,
+                7,
+                10,
+                12
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Veli",
+            "aktiflik": 0.7,
+            "etkilesim": 15,
+            "baglantiSayisi": 4,
+            "komsular": [
+                1,
+                3,
+                4,
+                6
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Ay\u015fe",
+            "aktiflik": 0.95,
+            "etkilesim": 30,
+            "baglantiSayisi": 7,
+            "komsular": [
+                1,
+                2,
+                4,
+                5,
+                8,
+                11,
+                13
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Fatma",
+            "aktiflik": 0.6,
+            "etkilesim": 10,
+            "baglantiSayisi": 3,
+            "komsular": [
+                2,
+                3,
+                6
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Mehmet",
+            "aktiflik": 0.85,
+            "etkilesim": 20,
+            "baglantiSayisi": 5,
+            "komsular": [
+                1,
+                3,
+                7,
+                9,
+                14
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Zeynep",
+            "aktiflik": 0.75,
+            "etkilesim": 18,
+            "baglantiSayisi": 4,
+            "komsular": [
+                2,
+                4,
+                8,
+                15
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Can",
+            "aktiflik": 0.8,
+            "etkilesim": 22,
+            "baglantiSayisi": 6,
+            "komsular": [
+                1,
+                5,
+                10,
+                11,
+                16,
+                17
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Elif",
+            "aktiflik": 0.65,
+            "etkilesim": 12,
+            "baglantiSayisi": 3,
+            "komsular": [
+                3,
+                6,
+                9
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Burak",
+            "aktiflik": 0.5,
+            "etkilesim": 8,
+            "baglantiSayisi": 2,
+            "komsular": [
+                5,
+                8
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Deniz",
+            "aktiflik": 0.88,
+            "etkilesim": 24,
+            "baglantiSayisi": 5,
+            "komsular": [
+                1,
+                7,
+                12,
+                13,
+                18
+            ]
+        },
+        {
+            "id": 11,
+            "name": "Emre",
+            "aktiflik": 0.72,
+            "etkilesim": 16,
+            "baglantiSayisi": 4,
+            "komsular": [
+                3,
+                7,
+                12,
+                19
+            ]
+        },
+        {
+            "id": 12,
+            "name": "Seda",
+            "aktiflik": 0.78,
+            "etkilesim": 19,
+            "baglantiSayisi": 4,
+            "komsular": [
+                1,
+                10,
+                11,
+                20
+            ]
+        },
+        {
+            "id": 13,
+            "name": "Okan",
+            "aktiflik": 0.68,
+            "etkilesim": 14,
+            "baglantiSayisi": 3,
+            "komsular": [
+                3,
+                10,
+                14
+            ]
+        },
+        {
+            "id": 14,
+            "name": "Gizem",
+            "aktiflik": 0.55,
+            "etkilesim": 9,
+            "baglantiSayisi": 2,
+            "komsular": [
+                5,
+                13
+            ]
+        },
+        {
+            "id": 15,
+            "name": "Arda",
+            "aktiflik": 0.62,
+            "etkilesim": 11,
+            "baglantiSayisi": 2,
+            "komsular": [
+                6,
+                16
+            ]
+        },
+        {
+            "id": 16,
+            "name": "Ceren",
+            "aktiflik": 0.58,
+            "etkilesim": 10,
+            "baglantiSayisi": 2,
+            "komsular": [
+                7,
+                15
+            ]
+        },
+        {
+            "id": 17,
+            "name": "Kaan",
+            "aktiflik": 0.45,
+            "etkilesim": 7,
+            "baglantiSayisi": 1,
+            "komsular": [
+                7
+            ]
+        },
+        {
+            "id": 18,
+            "name": "Melis",
+            "aktiflik": 0.7,
+            "etkilesim": 13,
+            "baglantiSayisi": 2,
+            "komsular": [
+                10,
+                19
+            ]
+        },
+        {
+            "id": 19,
+            "name": "Onur",
+            "aktiflik": 0.52,
+            "etkilesim": 8,
+            "baglantiSayisi": 2,
+            "komsular": [
+                11,
+                18
+            ]
+        },
+        {
+            "id": 20,
+            "name": "Asl\u0131",
+            "aktiflik": 0.48,
+            "etkilesim": 6,
+            "baglantiSayisi": 1,
+            "komsular": [
+                12
+            ]
+        }
+    ],
+    "edges": [
+        {
+            "from": 1,
+            "to": 2,
+            "weight": 0.08928571428571427
+        },
+        {
+            "from": 1,
+            "to": 3,
+            "weight": 0.16395419069569356
+        },
+        {
+            "from": 1,
+            "to": 5,
+            "weight": 0.16395419069569356
+        },
+        {
+            "from": 1,
+            "to": 7,
+            "weight": 0.24989590561307454
+        },
+        {
+            "from": 1,
+            "to": 10,
+            "weight": 0.41418930093859607
+        },
+        {
+            "from": 1,
+            "to": 12,
+            "weight": 0.13650584496634732
+        },
+        {
+            "from": 2,
+            "to": 3,
+            "weight": 0.06135307602378865
+        },
+        {
+            "from": 2,
+            "to": 4,
+            "weight": 0.16393442622950818
+        },
+        {
+            "from": 2,
+            "to": 6,
+            "weight": 0.24997396285354573
+        },
+        {
+            "from": 3,
+            "to": 4,
+            "weight": 0.04673097907640921
+        },
+        {
+            "from": 3,
+            "to": 5,
+            "weight": 0.08929744011006849
+        },
+        {
+            "from": 3,
+            "to": 8,
+            "weight": 0.0514362830539269
+        },
+        {
+            "from": 3,
+            "to": 11,
+            "weight": 0.06527556477877823
+        },
+        {
+            "from": 3,
+            "to": 13,
+            "weight": 0.05716038918050608
+        },
+        {
+            "from": 4,
+            "to": 6,
+            "weight": 0.11033079024293965
+        },
+        {
+            "from": 5,
+            "to": 7,
+            "weight": 0.30896362889056944
+        },
+        {
+            "from": 5,
+            "to": 9,
+            "weight": 0.07477044917811511
+        },
+        {
+            "from": 5,
+            "to": 14,
+            "weight": 0.08060810542428809
+        },
+        {
+            "from": 6,
+            "to": 8,
+            "weight": 0.14117146541799644
+        },
+        {
+            "from": 6,
+            "to": 15,
+            "weight": 0.12075441815128145
+        },
+        {
+            "from": 7,
+            "to": 10,
+            "weight": 0.3088804421304711
+        },
+        {
+            "from": 7,
+            "to": 11,
+            "weight": 0.13651762953067773
+        },
+        {
+            "from": 7,
+            "to": 16,
+            "weight": 0.07325457957449251
+        },
+        {
+            "from": 7,
+            "to": 17,
+            "weight": 0.05946978541300981
+        },
+        {
+            "from": 8,
+            "to": 9,
+            "weight": 0.19509023243409265
+        },
+        {
+            "from": 10,
+            "to": 12,
+            "weight": 0.16393442622950818
+        },
+        {
+            "from": 10,
+            "to": 13,
+            "weight": 0.08928571428571427
+        },
+        {
+            "from": 10,
+            "to": 18,
+            "weight": 0.08062451753563292
+        },
+        {
+            "from": 11,
+            "to": 12,
+            "weight": 0.24996250937228212
+        },
+        {
+            "from": 11,
+            "to": 19,
+            "weight": 0.10812404908890978
+        },
+        {
+            "from": 12,
+            "to": 20,
+            "weight": 0.06971052307011001
+        },
+        {
+            "from": 13,
+            "to": 14,
+            "weight": 0.1639162496444491
+        },
+        {
+            "from": 15,
+            "to": 16,
+            "weight": 0.49980015984017895
+        },
+        {
+            "from": 18,
+            "to": 19,
+            "weight": 0.1665767443501146
+        }
+    ]
+}

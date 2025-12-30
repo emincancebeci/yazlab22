@@ -11,6 +11,8 @@ from PyQt5.QtWidgets import (
     QTextEdit,
     QScrollArea,
     QSplitter,
+    QFileDialog,
+    QMessageBox,
 )
 from PyQt5.QtCore import Qt
 from core.algorithms import Algorithms
@@ -474,46 +476,110 @@ class App(QMainWindow):
         self._set_result("\n".join(lines))
 
     def export_json(self):
-        path = os.path.join(self.data_dir, "graph_export.json")
-        Exporter.export_graph_json(self.graph, path)
-        self._set_result(f"JSON kaydedildi: {path}")
+        path, _ = QFileDialog.getSaveFileName(
+            self,
+            "JSON Olarak Kaydet",
+            os.path.join(self.data_dir, "graph_export.json"),
+            "JSON Files (*.json);;All Files (*)"
+        )
+        if not path:
+            return
+        try:
+            Exporter.export_graph_json(self.graph, path)
+            self._set_result(f"JSON kaydedildi: {path}")
+            QMessageBox.information(self, "Başarılı", f"Graf başarıyla kaydedildi:\n{path}")
+        except Exception as e:
+            self._set_result(f"JSON kaydedilemedi: {e}")
+            QMessageBox.critical(self, "Hata", f"Graf kaydedilemedi:\n{e}")
 
     def export_csv(self):
-        path = os.path.join(self.data_dir, "graph_export.csv")
-        Exporter.export_graph_csv(self.graph, path)
-        self._set_result(f"CSV kaydedildi: {path}")
+        path, _ = QFileDialog.getSaveFileName(
+            self,
+            "CSV Olarak Kaydet",
+            os.path.join(self.data_dir, "graph_export.csv"),
+            "CSV Files (*.csv);;All Files (*)"
+        )
+        if not path:
+            return
+        try:
+            Exporter.export_graph_csv(self.graph, path)
+            self._set_result(f"CSV kaydedildi: {path}")
+            QMessageBox.information(self, "Başarılı", f"Graf başarıyla kaydedildi:\n{path}")
+        except Exception as e:
+            self._set_result(f"CSV kaydedilemedi: {e}")
+            QMessageBox.critical(self, "Hata", f"Graf kaydedilemedi:\n{e}")
 
     def export_adj_list(self):
-        path = os.path.join(self.data_dir, "adjacency_list.csv")
-        Exporter.export_adjacency_list(self.graph, path)
-        self._set_result(f"Komşuluk listesi kaydedildi: {path}")
+        path, _ = QFileDialog.getSaveFileName(
+            self,
+            "Komşuluk Listesi Olarak Kaydet",
+            os.path.join(self.data_dir, "adjacency_list.csv"),
+            "CSV Files (*.csv);;All Files (*)"
+        )
+        if not path:
+            return
+        try:
+            Exporter.export_adjacency_list(self.graph, path)
+            self._set_result(f"Komşuluk listesi kaydedildi: {path}")
+            QMessageBox.information(self, "Başarılı", f"Komşuluk listesi kaydedildi:\n{path}")
+        except Exception as e:
+            self._set_result(f"Komşuluk listesi kaydedilemedi: {e}")
+            QMessageBox.critical(self, "Hata", f"Komşuluk listesi kaydedilemedi:\n{e}")
 
     def export_adj_matrix(self):
-        path = os.path.join(self.data_dir, "adjacency_matrix.csv")
-        Exporter.export_adjacency_matrix(self.graph, path)
-        self._set_result(f"Komşuluk matrisi kaydedildi: {path}")
+        path, _ = QFileDialog.getSaveFileName(
+            self,
+            "Komşuluk Matrisi Olarak Kaydet",
+            os.path.join(self.data_dir, "adjacency_matrix.csv"),
+            "CSV Files (*.csv);;All Files (*)"
+        )
+        if not path:
+            return
+        try:
+            Exporter.export_adjacency_matrix(self.graph, path)
+            self._set_result(f"Komşuluk matrisi kaydedildi: {path}")
+            QMessageBox.information(self, "Başarılı", f"Komşuluk matrisi kaydedildi:\n{path}")
+        except Exception as e:
+            self._set_result(f"Komşuluk matrisi kaydedilemedi: {e}")
+            QMessageBox.critical(self, "Hata", f"Komşuluk matrisi kaydedilemedi:\n{e}")
 
     def import_json(self):
-        path = os.path.join(self.data_dir, "graph_export.json")
+        path, _ = QFileDialog.getOpenFileName(
+            self,
+            "JSON Dosyası Seç",
+            self.data_dir,
+            "JSON Files (*.json);;All Files (*)"
+        )
+        if not path:
+            return
         try:
             g = Loader.load_graph_from_json(path)
+            self.graph = g
+            self._refresh_canvas()
+            self._set_result(f"JSON'dan grafik yüklendi: {path}")
+            QMessageBox.information(self, "Başarılı", f"Graf başarıyla yüklendi:\n{path}")
         except Exception as e:
             self._set_result(f"JSON içe aktarılamadı: {e}")
-            return
-        self.graph = g
-        self._refresh_canvas()
-        self._set_result(f"JSON'dan grafik yüklendi: {path}")
+            QMessageBox.critical(self, "Hata", f"Graf yüklenemedi:\n{e}")
 
     def import_csv(self):
-        path = os.path.join(self.data_dir, "graph_export.csv")
+        path, _ = QFileDialog.getOpenFileName(
+            self,
+            "CSV Dosyası Seç",
+            self.data_dir,
+            "CSV Files (*.csv);;All Files (*)"
+        )
+        if not path:
+            return
         try:
             g = Loader.load_graph_from_csv(path)
+            self.graph = g
+            self._refresh_canvas()
+            self._set_result(f"CSV'den grafik yüklendi: {path}")
+            QMessageBox.information(self, "Başarılı", f"Graf başarıyla yüklendi:\n{path}")
         except Exception as e:
             self._set_result(f"CSV içe aktarılamadı: {e}")
-            return
-        self.graph = g
-        self._refresh_canvas()
-        self._set_result(f"CSV'den grafik yüklendi: {path}")
+            QMessageBox.critical(self, "Hata", f"Graf yüklenemedi:\n{e}")
 
     def reset_graph(self):
         if not self.initial_graph_path:
